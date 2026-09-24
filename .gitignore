@@ -10,12 +10,6 @@ vendor/*
 composer.phar
 composer.lock
 
-
-tools/inc/vietnix-import-docs/vendor8/vendor
-tools/inc/vietnix-import-docs/vendor8/vendor/composer.lock
-tools/inc/vietnix-import-docs/vendor74/vendor
-tools/inc/vietnix-import-docs/vendor74/vendor/composer.lock
-
 tools/inc/vietnix-search-ai/storage/post_embeddings_ai.json
 tools/inc/vietnix-search-ai/storage/huongdan_embeddings_ai.json
 

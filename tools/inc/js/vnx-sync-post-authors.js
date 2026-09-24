@@ -99,7 +99,7 @@ jQuery(function ($) {
                             if (!response.success) {
                                 self.syncing = false;
                                 self.showAlert(response.data || 'Có lỗi xảy ra!', 'error');
-                                self.syncResult = { success: false, message: '❌ ' + (response.data || 'Lỗi không xác định') };
+                                self.syncResult = { success: false, message: (response.data || 'Lỗi không xác định') };
                                 return;
                             }
 
@@ -128,7 +128,7 @@ jQuery(function ($) {
                                 self.progress.percent = 100;
                                 self.syncResult = {
                                     success: true,
-                                    message: '✅ Hoàn tất! Đã cập nhật ' + self.progress.current + '/' + self.progress.totalPosts + ' bài viết.',
+                                    message: 'Hoàn tất! Đã cập nhật ' + self.progress.current + '/' + self.progress.totalPosts + ' bài viết.',
                                 };
                                 self.showAlert('Đồng bộ tác giả thành công!', 'success');
                             } else {
@@ -143,7 +143,7 @@ jQuery(function ($) {
                                 ? 'Chunk ' + page + ' bị timeout. Thử giảm kích thước batch hoặc kiểm tra server.'
                                 : 'Lỗi kết nối chunk ' + page + ': ' + error;
                             self.showAlert(msg, 'error');
-                            self.syncResult = { success: false, message: '❌ ' + msg };
+                            self.syncResult = { success: false, message: msg };
                         },
                     });
                 },

@@ -1,0 +1,132 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.vnx_search_to_popup {
+  button {
+    &:not(.popup_btn) {
+      background: linear-gradient(90deg, #f3b847 0%, #f49846 100%);
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  .vnx_popup {
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .vnx_popup.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .vnx_popup_bgr {
+    background: black;
+    opacity: 0.6;
+  }
+  .vnx_loading {
+    .loading_wrapper {
+      position: relative;
+      width: 32px;
+      height: 32px;
+    }
+    .loading_icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid #3498db;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      -webkit-animation: spin 1s linear infinite;
+    }
+  }
+  .vnx_popup_content_wrapper {
+    width: 100%;
+    max-width: 1030px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    .vnx_list {
+      max-height: 750px;
+      overflow-y: scroll;
+      margin-right: -15px;
+      padding-right: 5px;
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        border: none;
+      }
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+        border: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #d9d9d9;
+      }
+    }
+  }
+  .page-numbers {
+    text-align: center;
+    li {
+      display: inline-block;
+    }
+    span {
+      color: #9a9a9a;
+      padding: 10px;
+      color: #38a7ff;
+    }
+    a {
+      color: #9a9a9a;
+      padding: 10px;
+      &:hover {
+        color: #38a7ff;
+      }
+    }
+  }
+  .append_loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background-color: #ffffffd4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .vnx_card_item {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  input {
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .vnx_search_to_popup {
+    .vnx_popup_content_wrapper {
+      max-width: calc(100% - 60px);
+      .vnx_list {
+        max-height: 60vh;
+      }
+    }
+  }
+}
+.vnx_count_result span {
+  width: max-content !important;
+}

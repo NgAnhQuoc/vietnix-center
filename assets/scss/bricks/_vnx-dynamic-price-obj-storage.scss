@@ -1,0 +1,273 @@
+.vnx-dynamic-price-obj-storage {
+  font-family: "inter", sans-serif;
+
+  /* Ẩn spinner trong Chrome, Safari, Edge */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Ẩn spinner trong Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .range-slider {
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    padding: 8px 0;
+    // margin-left: 12px;
+
+    @media screen and (max-width: 991px) {
+      //   margin-left: 8px;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 24px;
+      outline: none;
+      border-radius: 999px;
+      touch-action: none;
+      background: linear-gradient(
+        90deg,
+        rgba(35, 59, 162, 0.2) 0%,
+        rgba(0, 100, 204, 0.2) 100%
+      );
+
+      @media screen and (max-width: 991px) {
+        height: 12px;
+      }
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1.7rem;
+      height: 1.7rem;
+      cursor: pointer;
+      z-index: 3;
+      position: relative;
+    }
+
+    .slider-thumb {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: var(
+        --Gradient-Primary,
+        linear-gradient(90deg, #007cfc 0%, #0064cc 100%)
+      );
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 2px 4px 8px 0 rgba(0, 100, 204, 0.2);
+      position: absolute;
+      top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+      transform: translate(-1.2px, -50%);
+      z-index: 2;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+
+      @media screen and (max-width: 991px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      width: fit-content;
+      padding: 0 10px;
+      height: 32px;
+      top: -43px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #090909;
+      text-align: center;
+      line-height: 35px;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .tooltip::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #090909;
+      bottom: -0.5em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .progress {
+      width: 0%;
+      height: 24px;
+      border-radius: 3px;
+      background: var(
+        --Gradient-Primary,
+        linear-gradient(90deg, #0064cc 0%, #007cfc 100%)
+      );
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      border-radius: 999px;
+      z-index: 1;
+
+      @media screen and (max-width: 991px) {
+        height: 12px;
+      }
+    }
+  }
+
+  .list-source .item-source:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VNX Dynamic Price Object Storage — V2
+   ═══════════════════════════════════════════════════════════════ */
+$vnx-obj-primary: #007cfc;
+$vnx-obj-track: #dedfe0;
+$vnx-obj-text: #282829;
+$vnx-obj-text-sub: #747475;
+$vnx-obj-border: #d9d9d9;
+
+.vnx-obj-v2 {
+  font-family: "inter", sans-serif;
+  /* Ẩn trước khi Vue khởi tạo */
+  &[v-cloak] {
+    display: none;
+  }
+
+  /* ── Slider ─────────────────────────────────────────────── */
+  .vnx-slider-wrap {
+    padding: 6px 0;
+  }
+
+  .vnx-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    outline: none;
+    cursor: pointer;
+    background: $vnx-obj-track;
+    touch-action: none;
+
+    /* Thumb — Webkit */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: $vnx-obj-primary;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      margin-top: 0px;
+    }
+
+    /* Thumb — Firefox */
+    &::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: $vnx-obj-primary;
+      border: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+
+    /* Track — Firefox */
+    &::-moz-range-track {
+      height: 6px;
+      border-radius: 999px;
+      background: $vnx-obj-track;
+    }
+
+    /* Progress — Firefox */
+    &::-moz-range-progress {
+      height: 6px;
+      border-radius: 999px;
+      background: $vnx-obj-primary;
+    }
+  }
+
+  /* ── Number input box ───────────────────────────────────── */
+  .vnx-input-box {
+    background: #fff;
+    border: 1px solid $vnx-obj-border;
+    border-radius: 4px;
+    min-width: 120px;
+    width: fit-content;
+  }
+
+  .vnx-num {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  /* ── Cycle select ───────────────────────────────────────── */
+  .vnx-cycle-select-wrap {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .vnx-cycle-select {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #fff;
+    border: 1px solid $vnx-obj-border;
+    border-radius: 6px;
+    padding: 0px 32px 0px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $vnx-obj-text;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease;
+    min-width: 110px;
+    height: 36px;
+    max-height: 36px;
+
+    &:hover,
+    &:focus {
+      border-color: $vnx-obj-primary;
+    }
+  }
+
+  .vnx-cycle-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,350 @@
+.brxe-vnx-tabs-layout {
+  &.tab-layout-content {
+    width: 100%;
+    padding: 8px;
+    border-radius: 24px;
+    background: #F2F3F5;
+
+    @media (max-width: 768px) {
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      border: none;
+    }
+
+    .vnx-tabs-layout-wrapper {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #FFF;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        border-radius: 0;
+        background: none;
+      }
+
+      .vnx-mobile-dropdown {
+        display: none;
+
+        @media (max-width: 768px) {
+          display: block;
+          position: relative;
+        }
+
+        .vnx-mobile-dropdown-button {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #007CFC;
+          border-radius: 16px;
+          color: #282829;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 30px;
+          cursor: pointer;
+          text-align: left;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: #FFF;
+
+          &.open i {
+            transform: rotate(180deg);
+          }
+
+          i {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .vnx-mobile-dropdown-menu {
+          position: absolute;
+          width: 100%;
+          top: calc(100% + 8px);
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 100;
+          padding: 8px;
+
+          &.open {
+            max-height: 336px;
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+            overflow-y: auto;
+          }
+
+          .vnx-mobile-dropdown-item {
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &.active {
+              color: #007CFC;
+              background: #F2F3F5;
+            }
+
+            &:hover {
+              color: #007CFC;
+              background: #F2F3F5;
+            }
+          }
+        }
+      }
+
+      .vnx-tabs-sidebar {
+        min-width: 355px;
+        padding-right: 20px;
+        background: #fff;
+        border-right: 1px solid #C0C0C2;
+        display: block;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        .vnx-tab-nav-item {
+          padding: 12px;
+          cursor: pointer;
+          border-bottom: 1px solid #C0C0C2;
+          color: #282829;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 30px;
+          position: relative;
+
+          &.active {
+            color: #007CFC;
+
+            &::before {
+              content: " ";
+              height: 24px;
+              width: 24px;
+              background: #FFF;
+              position: absolute;
+              border-radius: 4px;
+              right: -32px;
+              transform: rotate(-45deg);
+              border-top: 1px solid #C0C0C2;
+              border-left: 1px solid #C0C0C2;
+            }
+          }
+
+          &:hover {
+            color: #007CFC;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+
+      }
+
+      .vnx-tabs-content-wrapper {
+        flex: 1;
+        position: relative;
+        margin-bottom: -1px;
+
+        @media (max-width: 768px) {
+          max-height: 459px;
+          min-height: 459px;
+          overflow-y: auto;
+          border-radius: 16px;
+          margin-top: 16px;
+          background: #FFF;
+          margin-bottom: 0px;
+        }
+
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #f8f9fa;
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #cbd5e0;
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: #a0aec0;
+        }
+
+        .vnx-tab-content-panel {
+          display: none;
+          padding: 20px;
+          height: 100%;
+          overflow-y: auto;
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-position: bottom right;
+
+          @media (max-width: 768px) {
+            padding: 0px;
+            background-image: none !important;
+          }
+
+          &.active {
+            display: block;
+          }
+
+          .vnx-tab-items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0px 24px;
+
+            @media (max-width: 768px) {
+              grid-template-columns: 1fr;
+              gap: 0px;
+            }
+
+            .vnx-tab-item {
+              display: flex;
+              padding: 12px;
+              gap: 10px;
+              align-items: center;
+              position: relative;
+
+              .vnx-tab-item-icon {
+                width: 24px;
+                height: 24px;
+                max-width: 24px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+
+              .vnx-tab-item-content {
+                flex: 1;
+
+                .vnx-tab-item-title {
+                  color: #282829;
+                  font-size: 16px;
+                  font-weight: 400;
+                  line-height: 24px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  gap: 10px;
+
+                  .vnx-tab-item-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    position: relative;
+
+                    &:hover .vnx-tooltip {
+                      display: block;
+                    }
+
+                    .vnx-tooltip {
+                      padding-top: 8px;
+                      padding-right: 8px;
+                      padding-bottom: 8px;
+                      padding-left: 8px;
+                      border: 1px outset #dedfe0;
+                      border-radius: 8px;
+                      background-color: #007cfc;
+                      color: #fcfcfc;
+                      font-size: 14px;
+                      line-height: 24px;
+                      font-weight: 400;
+                      position: absolute;
+                      min-width: 180px;
+                      top: 30px;
+                      right: -18px;
+                      display: none;
+                      z-index: 1;
+                      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.12);
+
+                      @media (max-width: 768px) {
+                        left: auto;
+                        right: -12px;
+                        top: 30px;
+                        transform: none;
+                        max-width: 240px;
+                      }
+                    }
+
+                    .vnx-tooltip::after {
+                      content: " ";
+                      height: 16px;
+                      width: 16px;
+                      background: #007CFC;
+                      position: absolute;
+                      right: 16px;
+                      top: -8px;
+                      transform: rotate(-45deg);
+                      border-top: 1px solid #C0C0C2;
+                      border-right: 1px solid #C0C0C2;
+
+                      @media (max-width: 768px) {
+                        left: auto;
+                        right: 12px;
+                      }
+                    }
+                  }
+                }
+              }
+
+              &:nth-last-child(-n+3) {
+                .vnx-tooltip {
+                  @media (max-width: 768px) {
+                    bottom: 30px;
+                    left: auto !important;
+                    right: -12px !important;
+                    top: auto !important;
+                  }
+                }
+
+                .vnx-tooltip::after {
+                  @media (max-width: 768px) {
+                    left: auto !important;
+                    right: 12px !important;
+                    transform: rotate(135deg) !important;
+                    top: auto !important;
+                    bottom: -9px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

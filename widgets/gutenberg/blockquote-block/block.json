@@ -1,0 +1,22 @@
+{
+    "name": "nvx/blockquote-block",
+    "title": "VNX Blockquote",
+    "description": "Choose a blockquote style",
+    "editorStyle": ["vnx-blockquote-block-editor-center"],
+    "category": "text",
+    "icon": "format-quote",
+    "keywords": [
+        "blockquote",
+        "info",
+        "quote",
+        "example",
+        "error",
+        "price",
+        "warning"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blockquote-block.php"
+    },
+    "align": "full"
+}

@@ -1,0 +1,330 @@
+/* purgecss start ignore */
+.vnx-call-center {
+  height: 33px;
+  background-color: #38a7ff;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+
+  .vnx-hotline {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .vnx-btn-fb {
+    background-color: #1877f2;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .vnx-btn-share {
+    margin-left: 6px;
+    margin-right: 9px;
+  }
+  // .vnx-fb-like::before {
+  //   font-family: "Font Awesome 5 Free";
+  //   font-weight: 600;
+  //   content: "\f164";
+  // }
+
+  .small-menu {
+    display: flex;
+    > li {
+      cursor: pointer;
+      padding-left: 20px;
+    }
+  }
+}
+.vnx-menu-desktop > .menu {
+  display: flex;
+  height: 60px;
+
+  > li {
+    position: relative;
+    display: flex;
+    color: #013a52;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: normal;
+
+    > a {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 21px 12px;
+    }
+
+    &.menu-item-has-children {
+      > a {
+        position: relative;
+      }
+
+      > a::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        content: "\f078";
+        margin-left: 5px;
+        font-size: 10px;
+        color: #013a52;
+      }
+    }
+
+    &.active {
+      color: #38a7ff;
+      border-bottom: solid 4px #38a7ff;
+      &.menu-item-has-children {
+        > a::after {
+          color: #38a7ff;
+        }
+      }
+    }
+
+    &:hover {
+      color: #38a7ff;
+      border-bottom: solid 4px #38a7ff;
+
+      &.menu-item-has-children {
+        > a::after {
+          color: #38a7ff;
+        }
+      }
+      .sub-menu {
+        position: absolute;
+        min-width: 340px;
+        top: 60px;
+        left: 0;
+        background: #fff;
+        border: 1px solid #f1f1f1;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+          width: 100%;
+          display: flex;
+          border-bottom: 1px solid #f1f1f1;
+          padding: 20px;
+
+          .icon-box {
+            padding: 10px;
+            height: 60px;
+            width: 60px;
+            margin-right: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 15px rgba(10, 38, 61, 0.2);
+          }
+
+          .text-box.active {
+            .txt-link {
+              color: #38a7ff !important;
+            }
+          }
+          .txt-link {
+            display: block;
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            color: #013a52;
+            &:hover {
+              color: #38a7ff;
+            }
+          }
+
+          .txt-content {
+            display: block;
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+            color: #8a9ca4;
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      display: none;
+    }
+  }
+}
+.vnx-btn-login {
+  border-left: 1px solid #eaeef1;
+  height: 60px;
+  padding: 0 20px;
+}
+.vnx-btn-language {
+  border-left: 1px solid #eaeef1;
+  height: 60px;
+  padding-left: 20px;
+}
+
+.vnx-btn-language::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f078";
+  margin-left: 5px;
+  font-size: 10px;
+  color: #013a52;
+}
+
+.vnx-menu-mobile {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 92px;
+  background-color: #ffffff;
+  width: 100%;
+  height: calc(100vh - 93px);
+  border-top: 1px solid #edf2f7;
+
+  .menu-container {
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+  }
+
+  .menu {
+    > li {
+      border: 1px solid #f3f3f3;
+      padding: 10px 0;
+      &.active {
+        color: #38a7ff;
+      }
+      > a {
+        padding: 0 10px;
+      }
+      &.menu-item-has-children {
+        position: relative;
+        > .arrow-icon::after {
+          position: absolute;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 600;
+          content: "\f078";
+          right: 10px;
+          margin-top: 5px;
+          font-size: 10px;
+          color: #013a52;
+        }
+
+        .sub-menu {
+          margin-bottom: -12px;
+          margin-top: 12px;
+          > li.active {
+            > a .txt-link {
+              color: #38a7ff !important;
+            }
+          }
+          > li {
+            width: 100%;
+            display: flex;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 20px;
+
+            .icon-box {
+              padding: 10px;
+              height: 60px;
+              width: 60px;
+              margin-right: 15px;
+              border-radius: 5px;
+              box-shadow: 0px 4px 15px rgba(10, 38, 61, 0.2);
+            }
+
+            .text-box.active {
+              .txt-link {
+                color: #38a7ff !important;
+              }
+            }
+            .txt-link {
+              display: block;
+              font-family: "Roboto", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 16px;
+              color: #013a52;
+              &:hover {
+                color: #38a7ff;
+              }
+            }
+
+            .txt-content {
+              display: block;
+              font-family: "Roboto", sans-serif;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 16px;
+              color: #8a9ca4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .small-menu {
+    li {
+      padding: 7px 30px;
+      background-color: #f9f9f9;
+      border: 1px solid #f2f2f2;
+      box-sizing: border-box;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+
+  .vnx-btn-language-mobile {
+    padding: 7px 10px;
+    border: 1px solid #f2f2f2;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .vnx-btn-language-mobile::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f078";
+    margin-left: 5px;
+    font-size: 10px;
+    color: #013a52;
+  }
+}
+
+.hidden-scroll {
+  overflow-y: hidden !important;
+}
+
+.menu-gift .menu-gift-items {
+  left: -10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .vnx-call-center {
+    .vnx-small-menu {
+      display: none;
+    }
+    .vnx-hotline {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .menu-gift .menu-gift-items {
+    left: -50px;
+  }
+}
+/* purgecss end ignore */

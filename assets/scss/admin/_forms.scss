@@ -1,0 +1,38 @@
+// Trạng thái đang gửi của nút submit (.vnx-button-submit), bật bởi assets/js/admin/general.js.
+// Viết bằng SCSS thay vì class Tailwind vì trạng thái này chỉ do JS thêm vào,
+// Tailwind JIT không quét file JS nên sẽ không sinh ra class tương ứng.
+.vnx-button-submit {
+  position: relative;
+
+  &.is-loading {
+    padding-left: 2.5rem;
+    pointer-events: none;
+    opacity: 0.75;
+
+    // Icon gốc của nút phải ẩn đi khi spinner (::before) hiện ra, không thì hai icon
+    // chồng lên nhau ở cùng một chỗ.
+    > svg {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      width: 1rem;
+      height: 1rem;
+      margin-top: -0.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.45);
+      border-top-color: #fff;
+      border-radius: 9999px;
+      animation: vnx-spin 0.6s linear infinite;
+    }
+  }
+}
+
+@keyframes vnx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

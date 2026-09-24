@@ -1,0 +1,105 @@
+.brxe-vnx-bonus-service-time .vnx_bst_tab_title {
+    margin-bottom: 40px;
+}
+
+.brxe-vnx-bonus-service-time .vnx_bst_tab_title .vnx_splide::-webkit-scrollbar {
+    height: 0;
+}
+
+.brxe-vnx-bonus-service-time .vnx_bst_tab_title_item {
+    border-color: #c0c0c2;
+    color: #5b5b5c;
+    flex: 0 0 auto;
+    min-height: 54px;
+    min-width: 200px;
+}
+.brxe-vnx-bonus-service-time .vnx_bst_tab_title_item.active {
+    border-color: white;
+    color: #007cfc;
+}
+
+.brxe-vnx-bonus-service-time .vnx_bst_tab_title_item:not(.active) img {
+    display: none;
+}
+
+.brxe-vnx-bonus-service-time .vnx_bst_tab_content:not(.active) {
+    display: none !important;
+}
+
+.brxe-vnx-bonus-service-time .vnx_bts_tab_content_wrapper {
+    flex-wrap: wrap;
+    width: calc(100% + 24px);
+    max-width: calc(100% + 24px);
+}
+
+.brxe-vnx-bonus-service-time .vnx_bst_tab_content_item {
+    width: calc(100% / 4 - 24px);
+}
+
+.brxe-vnx-bonus-service-time .vnx_circle_top_title {
+    background: #007cfc;
+}
+
+.brxe-vnx-bonus-service-time .vnx_bst_bottom {
+    margin-top: -14px;
+}
+.brxe-vnx-bonus-service-time .vnx_circle_bonus_time {
+    background: linear-gradient(90deg, #007cfc 0%, #0064cc 100%);
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.04);
+}
+.brxe-vnx-bonus-service-time .vnx_circle_top_content > div {
+    background: var(
+        --Gradient-Primary,
+        linear-gradient(90deg, #007cfc 0%, #0064cc 100%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.brxe-vnx-bonus-service-time .vnx_bst_tab_content_button a {
+    color: white;
+    background: linear-gradient(104deg, #ff9400 0%, #ffc500 100%);
+    min-width: 201px;
+    min-height: 54px;
+    padding: 12px 32px;
+    font-size: 18px;
+    line-height: 166.667%;
+}
+.brxe-vnx-bonus-service-time .vnx_bst_tab_content_button a:hover {
+    background: linear-gradient(104deg, #ff8600 0%, #ffb300 100%);
+}
+@media (max-width: 1024px) {
+    .brxe-vnx-bonus-service-time .vnx_bst_tab_title {
+        margin-bottom: 32px;
+    }
+    .brxe-vnx-bonus-service-time .vnx_bst_tab_title_item {
+        min-height: 48px;
+        min-width: 163px;
+    }
+    .brxe-vnx-bonus-service-time .vnx_bts_tab_content_wrapper {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: calc(100% + 16px);
+        max-width: calc(100% + 16px);
+    }
+    .brxe-vnx-bonus-service-time
+        .vnx_bts_tab_content_wrapper::-webkit-scrollbar {
+        height: 0;
+    }
+    .brxe-vnx-bonus-service-time .vnx_bst_tab_content_item {
+        width: 245px;
+        flex: 0 0 auto;
+    }
+    .brxe-vnx-bonus-service-time .vnx_bst_bottom {
+        margin-top: -12px;
+    }
+    .brxe-vnx-bonus-service-time .vnx_bst_tab_content_button a {
+        min-height: 40px;
+        min-width: 169px;
+        padding: 8px 24px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}

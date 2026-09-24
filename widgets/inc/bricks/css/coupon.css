@@ -1,0 +1,31 @@
+.brxe-vnx-coupon .vnx_copy_coupon {
+    background: linear-gradient(90deg, #F3B847 0%, #F49846 100%);
+}
+
+.brxe-vnx-coupon .vnx_copy_coupon:hover:not(.vnx_disabled) {
+    background: linear-gradient(90deg, #FFA800 0%, #CB6000 100%);
+}
+
+.brxe-vnx-coupon .vnx_wrapper {
+    background: linear-gradient(90deg, #3E98EB 0%, #00B0FF 100%);
+}
+
+.brxe-vnx-coupon .vnx_wrapper .vnx_col_left {
+    max-width: 640px;
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+    .brxe-vnx-coupon .vnx_wrapper .vnx_col_left {
+        max-width: 60%;
+    }
+}
+@media (max-width: 767px) {
+    .brxe-vnx-coupon .vnx_wrapper .vnx_col_left {
+        max-width: 100%;
+    }
+}
+@media (max-width: 355px) {
+    .brxe-vnx-coupon .vnx_wrapper .vnx_img_wrap {
+        max-width: 100% !important;
+    }
+}

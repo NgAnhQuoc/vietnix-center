@@ -1,0 +1,533 @@
+/* slider  */
+.compare_hosting_v1 .vnx_hidden {
+  visibility: hidden;
+  height: 0px;
+}
+
+.compare_hosting_v1 .button_box_prices {
+  overflow-x: clip;
+  position: relative;
+}
+
+.compare_hosting_v1 .box-row-infor-all-price {
+  overflow: hidden;
+}
+.compare_hosting_v1 .vnx_header_price {
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+@media screen and (max-width: 991px) {
+  .compare_hosting_v1 .vnx_header_price {
+    top: 40px;
+  }
+}
+.compare_hosting_v1 .vnx-swiper-button {
+  position: absolute;
+  top: 45%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.compare_hosting_v1 .vnx-swiper-button .swiper_button {
+  height: 32px;
+  width: 28px;
+  z-index: 1;
+}
+.compare_hosting_v1 .swiper_button i {
+  color: #525666;
+}
+.compare_hosting_v1
+  .vnx_body_prices
+  .vnx_box_infor_hosting_first
+  .vnx_content_box_hosting {
+  height: 100% !important;
+}
+.compare_hosting_v1
+  .vnx_body_prices
+  .vnx_box_infor_hosting_second
+  .vnx_content_box_hosting {
+  max-height: 280px;
+  min-height: 100%;
+}
+.compare_hosting_v1 .vnx_load_more {
+  border-radius: 0px 0px 8px 8px;
+}
+.compare_hosting_v1 .vnx_load_more.collapsed {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 75.5%,
+    #fff 100%
+  );
+}
+.compare_hosting_v1 .vnx_load_more.expanded {
+  border-top: 1px solid #e0e0e0;
+}
+.compare_hosting_v1 .vnx_box_infor_hosting.vnx_box_infor_hosting_second {
+  position: relative;
+}
+
+.compare_hosting_v1 button.vnx-button-more.toggle-btn {
+  padding: 54px 0px 12px;
+}
+.compare_hosting_v1 button.vnx-button-close {
+  padding: 12px 0px;
+}
+
+/* table  */
+
+.compare_hosting_v1 .box-row-infor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0px 8px;
+  min-height: 65px;
+  align-items: center;
+  border-right: 1px solid #c3e5ff;
+  border-bottom: 1px solid #c3e5ff;
+}
+.compare_hosting_v1 .box-row-infor:nth-child(even) {
+  background-color: rgba(56, 167, 255, 0.1);
+}
+.compare_hosting_v1 .box-row-infor-price > .row-price:nth-child(even) {
+  background-color: rgba(56, 167, 255, 0.1);
+}
+.compare_hosting_v1 .box-list-row-infor .box-row-infor:last-child {
+  border-bottom: none;
+}
+.compare_hosting_v1 .box-row-infor-price .row-price:last-child {
+  border-bottom: none;
+}
+
+.compare_hosting_v1 .vnx_box_infor_hosting {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  /* overflow: hidden; */
+  margin-top: 32px;
+}
+
+.compare_hosting_v1 .box-row-infor-price .row-price {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0px 8px;
+  min-height: 65px;
+  align-items: center;
+  border-right: 1px solid #c3e5ff;
+  border-bottom: 1px solid #c3e5ff;
+}
+.box-row-infor-price.vnx_price_pack_popular_row {
+  background: linear-gradient(
+    270deg,
+    rgba(45, 134, 204, 0.16) 0%,
+    rgba(56, 167, 255, 0) 50%,
+    rgba(45, 134, 204, 0.16) 100%
+  );
+}
+.compare_hosting_v1 .infor-tooltip {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.compare_hosting_v1 .infor-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.compare_hosting_v1 .infor-icon {
+  cursor: pointer;
+  position: relative;
+}
+.compare_hosting_v1 .infor-icon:hover ~ .text-tooltip {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: -145px;
+  right: 0px;
+  z-index: 1;
+  background: #007cfc;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px;
+}
+
+.compare_hosting_v1 .text-tooltip {
+  display: none;
+}
+.compare_hosting_v1 .vnx_title_box_hosting {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  height: 65px;
+  border-bottom: 1px solid #525666;
+  background: linear-gradient(90deg, #007cfc 0%, #0064cc 100%);
+  border-radius: 8px 8px 0px 0px;
+}
+
+.compare_hosting_v1 .vnx_title_box_hosting .title {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.compare_hosting_v1 .vnx_icon_show {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.compare_hosting_v1 .vnx_icon_hidden {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* button support  */
+.compare_hosting_v1 .vnx_name_price {
+  min-height: 128px;
+  background: #fff;
+  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.1);
+}
+.compare_hosting_v1 .button_box_support {
+  display: flex;
+  padding: 0px 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-right: 1px solid #c3e5ff;
+  background: #fff;
+}
+
+.compare_hosting_v1 .button_support {
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  background: var(
+    --Gradient-Orangle-01,
+    linear-gradient(90deg, #f3b847 0%, #f49846 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid #f3b847;
+}
+
+/* bar price  */
+.compare_hosting_v1 .vnx_price_pack {
+  padding: 8px 8px 24px 8px;
+  border-right: 1px solid #c3e5ff;
+  background: #fff;
+}
+.compare_hosting_v1 .vnx_price_pack.vnx_price_pack_popular {
+  background: linear-gradient(
+    270deg,
+    rgba(45, 134, 204, 0.16) 0%,
+    rgba(56, 167, 255, 0) 50%,
+    rgba(45, 134, 204, 0.16) 100%
+  );
+}
+
+.compare_hosting_v1 .vnx_price_pack_price a {
+  border-radius: 8px;
+  border: 1px solid #38a7ff;
+  background: #fff;
+  padding: 6px 4px;
+}
+
+.compare_hosting_v1 .vnx_price_pack_price a:hover {
+  background: rgba(56, 167, 255, 0.24);
+}
+.compare_hosting_v1 .vnx_button_register .vnx-button-register {
+  display: flex;
+  width: 145px;
+  height: 32px;
+  padding: 0px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(
+    --Gradient-Orangle-01,
+    linear-gradient(90deg, #f3b847 0%, #f49846 100%)
+  );
+  box-shadow: 0px 2px 8px -2px rgba(244, 152, 70, 0.5);
+}
+
+.compare_hosting_v1 .vnx_button_register .vnx-button-register:hover {
+  background: var(
+    --Gradient-Orange-02,
+    linear-gradient(88deg, #ffa800 4.36%, #cb6000 100.54%)
+  );
+}
+
+.compare_hosting_v1 .swiper-button-disabled i {
+  color: #e0e0e0;
+}
+@media only screen and (max-width: 1024px) {
+  .compare_hosting_v1 .vnx-swiper-button .swiper_button {
+   width: 28px;
+    height: 28px;
+    border: 1px solid #FFF;
+    background: #007CFC;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 50px;
+    padding: 2px;
+  }
+  .compare_hosting_v1 .swiper_button i {
+    color: #FFF;
+}
+  .compare_hosting_v1 .vnx_header_price {
+    padding: 0px 16px;
+  }
+  .compare_hosting_v1 .box-row-infor {
+    gap: 8px;
+    min-height: 45px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    justify-content: start !important;
+  }
+  .box-row-infor-price .row-price {
+    min-height: 45px !important;
+    border-right: 1px solid #e0e0e0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+  }
+  .compare_hosting_v1 .infor-icon:hover ~ .text-tooltip {
+    right: -145px !important;
+    left: 0px !important;
+    z-index: 10 !important;
+  }
+  .compare_hosting_v1 .vnx_title_box_hosting {
+    height: 45px !important;
+    border-radius: 0px;
+  }
+  .compare_hosting_v1
+    .vnx_body_prices
+    .vnx_box_infor_hosting_second
+    .vnx_content_box_hosting {
+    max-height: 400px;
+    min-height: 100%;
+    overflow: hidden;
+  }
+  .compare_hosting_v1 .vnx_icon_show {
+    font-size: 20px !important;
+  }
+
+  .compare_hosting_v1 .vnx_icon_hidden {
+    font-size: 20px !important;
+  }
+  .compare_hosting_v1 .vnx_name_price {
+    position: relative;
+  }
+  .compare_hosting_v1 .vnx_price_pack {
+    padding: 10px 8px !important;
+    border-right: 1px solid #e0e0e0 !important;
+    gap: 8px;
+  }
+  .compare_hosting_v1 .vnx_body_prices {
+    padding: 0px 16px;
+  }
+  .compare_hosting_v1 .swiper_button.swiper-button-prev {
+    position: absolute;
+    left: -16px;
+  }
+  .compare_hosting_v1 .swiper_button.swiper-button-next {
+    position: absolute;
+    right: -16px;
+  }
+  .compare_hosting_v1 .button_box_prices.swiper-container-mobile {
+    border-top: 1px solid #c3e5ff;
+  }
+  .compare_hosting_v1 .vnx_box_infor_hosting {
+    border: none;
+    margin-top: 12px;
+  }
+}
+/* multiple service  */
+.multiple_service_hosting .vnx_tab_list {
+  border-bottom: 1px solid #e0e0e0;
+}
+.multiple_service_hosting .vnx_button_price .brxe-button {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f3b847 0%, #f49846 100%);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #fff;
+}
+.multiple_service_hosting .vnx_button_price .brxe-button:hover {
+  background: linear-gradient(88deg, #ffa800 4.36%, #cb6000 100.54%);
+}
+.multiple_service_hosting .vnx_button_price .brxe-button i {
+  font-size: 18px;
+}
+.multiple_service_hosting .vnx_tab_list .vnx_tab_title {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  transition: color 1s;
+}
+.multiple_service_hosting .vnx_tab_list .vnx_tab_title.tab_active {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: #38a7ff;
+  border-bottom: 2px solid #38a7ff;
+}
+.multiple_service_hosting .vnx_package_infor .img {
+  width: 20px !important;
+  height: 20px !important;
+}
+.multiple_service_hosting .vnx_package_price .vnx_price_number {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  background: linear-gradient(90deg, #f3b847 0%, #f49846 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.multiple_service_hosting .vnx_service_body .vnx_tab_body {
+  display: none;
+}
+.multiple_service_hosting .vnx_service_body .vnx_tab_body.tab_active {
+  display: block;
+}
+/* @media only screen and (min-width: 1024px) {
+
+} */
+.multiple_service_hosting_mobile .vnx_package_price .vnx_price_number {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  background: linear-gradient(90deg, #f3b847 0%, #f49846 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.multiple_service_hosting_mobile .vnx_button_price .brxe-button {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f3b847 0%, #f49846 100%);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #fff;
+}
+.multiple_service_hosting_mobile .vnx_button_price .brxe-button:hover {
+  background: linear-gradient(88deg, #ffa800 4.36%, #cb6000 100.54%);
+}
+.multiple_service_hosting_mobile .vnx_button_price .brxe-button i {
+  font-size: 18px;
+}
+
+.multiple_service_hosting_mobile .vnx_service_body .vnx_tab_body {
+  display: none;
+}
+.multiple_service_hosting_mobile .vnx_service_body .vnx_tab_body.tab_active {
+  display: block;
+}
+.multiple_service_hosting_mobile .vnx_service_header {
+  overflow-x: clip;
+  position: relative;
+}
+.multiple_service_hosting_mobile .vnx_tab_title.swiper-slide-active {
+  background: #226499;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 25px 0;
+}
+.multiple_service_hosting_mobile .vnx-swiper-button {
+  position: absolute;
+  top: 35%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 1;
+}
+.multiple_service_hosting_mobile .vnx-swiper-button button#swiper-button-prev {
+  padding: 10px;
+  border: 1px solid #fff;
+  height: 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  margin-left: 16px;
+}
+.multiple_service_hosting_mobile .vnx-swiper-button button#swiper-button-next {
+  padding: 10px;
+  border: 1px solid #fff;
+  height: 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  margin-right: 16px;
+}
+.multiple_service_hosting_mobile .vnx_service_body .swiper-slide.vnx_tab_body {
+  display: block;
+}
+.multiple_service_hosting_mobile .vnx_tab_title {
+  background: #226499;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 25px 0;
+}
+.multiple_service_hosting_mobile .vnx_tab_list .vnx_tab_title.tab_active {
+  color: #fff !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.multiple_service_hosting_mobile .vnx_service_body.swiper_service_multiple {
+  overflow: hidden;
+}

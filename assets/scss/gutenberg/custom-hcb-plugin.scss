@@ -1,0 +1,158 @@
+#vnx_post_content article .single-article-content,
+article .article-content,
+#vnx_post_content #ftwp-postcontent,
+#vnx_post_content,
+.wp-block-post-content {
+    .code_block_label {
+        margin-bottom: 0;
+        opacity: 0.8;
+        font-size: 0.8em;
+    }
+    .vnx_wrap {
+        position: relative;
+    }
+    .hcb_wrap {
+        .line-numbers {
+            .line-numbers-rows {
+                border-right: none;
+                left: -3.5em;
+                top: 0px;
+            }
+            > span:before {
+            }
+        }
+        .hcb-clipboard + pre:before {
+            content: none;
+        }
+        button.hcb-clipboard {
+            display: none;
+        }
+    }
+    .wp-block-code,
+    .hcb_wrap pre,
+    .hcb_wrap code {
+        background-color: #133760 !important;
+        color: white;
+        text-shadow: none;
+        font-size: 1em;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
+    .hcb_wrap pre,
+    .wp-block-code {
+        padding-left: 3.5em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .wp-block-code {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        code {
+            position: relative;
+            // white-space: pre;
+            line-height: 1.5;
+        }
+        .line-numbers-rows {
+            letter-spacing: -1px;
+            pointer-events: none;
+            position: absolute;
+            user-select: none;
+            width: 3em;
+            border-right: none;
+            left: -3.5em;
+            top: 0;
+            height: 100%;
+            counter-reset: linenumber;
+            span {
+                counter-increment: linenumber;
+                display: block;
+                pointer-events: none;
+                &:before {
+                    content: counter(linenumber);
+                    display: block;
+                    padding-right: 0.8em;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .hcb_wrap .line-numbers-rows > span:before,
+    .token.punctuation {
+        color: white;
+    }
+    .token.boolean,
+    .token.constant,
+    .token.deleted,
+    .token.number,
+    .token.property,
+    .token.symbol,
+    .token.tag {
+        color: #d11f82;
+    }
+    .token.cdata,
+    .token.comment,
+    .token.doctype,
+    .token.prolog {
+        color: #c2c2c2;
+    }
+    .token.constant,
+    .token.deleted,
+    .token.important,
+    .token.property,
+    .token.symbol,
+    .token.tag,
+    .token.keyword,
+    .token.operator {
+        color: #ff5794;
+    }
+    .token.attr-name,
+    .token.builtin,
+    .token.char,
+    .token.class-name,
+    .token.inserted,
+    .token.selector {
+        color: #b4ec43;
+    }
+    .token.atrule,
+    .token.attr-value,
+    .token.function,
+    .token.string {
+        color: #f3e880;
+    }
+    .vnx-clipboard.vnx_copy {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+        color: #0c1c48;
+        background-color: white;
+        line-height: 1.5;
+        padding: 0 10px;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        .copied {
+            display: none;
+        }
+        &:hover {
+            background-color: #38a7ff;
+        }
+    }
+    .vnx-clipboard.vnx_copy.done {
+        background-color: #38a7ff;
+        .copied {
+            display: initial;
+        }
+        .no_copied {
+            display: none;
+        }
+    }
+}

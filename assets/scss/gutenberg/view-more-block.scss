@@ -1,0 +1,43 @@
+#vnx_post_content article .single-article-content,
+article .article-content,
+    #vnx_post_content,
+    #vnx_post_content #ftwp-postcontent,
+
+.vnx-view-more-block {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 16px;
+    line-height: 1.7;
+    .vnx-row {
+        display: flex;
+    }
+    .list {
+        padding-left: 14px !important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 16px;
+        border-left: solid 8px;
+        margin: 0;
+        .item {
+            padding: 0;
+            margin-bottom: 10px;
+            list-style: none!important;
+            * {
+                display: inline!important;
+                vertical-align: middle;
+            }
+            .before_url {
+                margin-right: 4px;
+            }
+        }
+        .item:last-child {
+            margin-bottom: 0;
+        }
+        .list-bullet {
+            height: 1.2em;
+            width: 1.2em;
+            margin-right: 4px;
+        }
+    }
+}
+

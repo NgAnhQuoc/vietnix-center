@@ -1,0 +1,14 @@
+{
+    "name": "nvx/block-table-coupon",
+    "title": "VNX Coupon Table",
+    "description": "Table coupon singlepost",
+    "editorStyle": ["vnx-block-table-coupon-center"],
+    "category": "formatting",
+    "icon": "forms",
+    "keywords": ["table", "coupon"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-table-coupon.php"
+    },
+    "align": "full"
+}

@@ -1,0 +1,9 @@
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+// Tagify nap truoc cac partial cua plugin: style cua minh phai duoc quyen de len
+// vendor, chu khong phai nguoc lai.
+@import "node_modules/@yaireo/tagify/src/tagify.scss";
+@import "./admin/forms";
+@import "./admin/media_tool";
+@import "./admin/tools";

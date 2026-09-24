@@ -1,0 +1,14 @@
+{
+    "name": "nvx/compare-block",
+    "title": "VNX Compare Table",
+    "description": "A compare table with 2 columns",
+    "editorStyle": ["vnx-compare-block-center"],
+    "category": "formatting",
+    "icon": "forms",
+    "keywords": ["compare", "table"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "compare-block.php"
+    },
+    "align": "full"
+}

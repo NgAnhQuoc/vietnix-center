@@ -1,0 +1,71 @@
+.vnx-compare-block {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.vnx-compare-block .vnx-row {
+    display: flex;
+}
+.vnx-compare-block .vnx-col-6 {
+    flex: 50%;
+    max-width: 50%;
+    width: 50%;
+}
+.vnx-compare-block .vnx-col {
+    padding: 16px;
+}
+.vnx-compare-block .col_title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    line-height: 1.5;
+}
+.vnx-compare-block .list_wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 0 !important;
+}
+.vnx-compare-block .list_wrapper > li {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+.vnx-compare-block .list_wrapper .item_content {
+    flex-grow: 1;
+}
+.vnx-compare-block .list_wrapper .list-bullet {
+    display: inline-block;
+    width: 1em;
+    height: 1.8em;
+    margin-right: 1em;
+}
+.vnx-compare-block .list_wrapper p {
+    margin-top: 0;
+    font-size: 1em;
+    margin-bottom: 1em;
+    padding: 0;
+    line-height: 1.5;
+}
+.vnx-compare-block .list_wrapper > li:last-of-type p {
+    margin-bottom: 0;
+}
+.vnx-compare-block .list_wrapper p {
+    margin-top: 0;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+@media (max-width: 640px) {
+    .vnx-compare-block .vnx-row {
+        flex-direction: column;
+    }
+    .vnx-compare-block .vnx-col-6 {
+        flex: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "nvx/note-icon-block",
+    "title": "VNX Icon Note",
+    "description": "A note block with icon before",
+    "editorStyle": ["vnx-note-icon-block-editor-center"],
+    "category": "text",
+    "icon": "format-quote",
+    "keywords": ["note", "icon"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "note-icon-block.php"
+    },
+    "align": "full"
+}

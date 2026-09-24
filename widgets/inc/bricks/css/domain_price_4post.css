@@ -1,0 +1,46 @@
+.break-words {
+    word-break: break-word;
+}
+
+.brxe-post-content .brxe-vnx-domain-price-table a,
+.brxe-vnx-domain-price-table a,
+.brxe-post-content .ftwp-postcontent .brxe-vnx-domain-price-table a {
+    color: #424552;
+}
+
+.brxe-vnx-domain-price-table.widget_for_post .vnx_tooltip_content.domain_tooltip {
+    left: 0;
+    top: calc(100% + 2px);
+}
+
+.brxe-vnx-domain-price-table.widget_for_post .vnx_tooltip_content.price_tooltip {
+    top: calc(100% + 4px);
+    right: -16px;
+}
+
+.brxe-vnx-domain-price-table.widget_for_post .vnx_table_content,
+.brxe-vnx-domain-price-table.widget_for_post .vnx_tooltip_content {
+    display: none;
+}
+
+.brxe-vnx-domain-price-table.widget_for_post .vnx_table_content.active,
+.brxe-vnx-domain-price-table.widget_for_post .vnx_tooltip_content.active {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .brxe-vnx-domain-price-table.widget_for_post .vnx_tab_title {
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+    }
+
+    .brxe-vnx-domain-price-table.widget_for_post .vnx_tab_title.active::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #38a7ff;
+    }
+}

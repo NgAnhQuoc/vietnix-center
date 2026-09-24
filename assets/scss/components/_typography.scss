@@ -1,0 +1,32 @@
+/* purgecss start ignore */
+.vnx-block-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif !important;
+
+  @media (min-width: 1024px) {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+h2.vnx-block-title {
+  font-size: 28px;
+  font-weight: 700 !important;
+
+  @media (min-width: 1024px) {
+    font-size: 38px;
+  }
+}
+
+h1.vnx-page-title {
+  font-size: 32px;
+  color: #38a7ff;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif !important;
+
+  @media (min-width: 1024px) {
+    font-size: 42px;
+  }
+}
+/* purgecss end ignore */

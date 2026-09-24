@@ -1,0 +1,14 @@
+{
+    "name": "nvx/view-more-block",
+    "title": "VNX View More List",
+    "description": "A list of view more url, custom background, icon",
+    "editorStyle": ["vnx-view-more-block-editor-center"],
+    "category": "text",
+    "icon": "admin-links",
+    "keywords": ["more", "link", "url", "viewmore", "seemore", "xem"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "view-more-block.php"
+    },
+    "align": "full"
+}

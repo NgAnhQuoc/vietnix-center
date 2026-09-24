@@ -1,0 +1,239 @@
+.brxe-vnx-slide-domain-v1 {
+  .vnx_wrap_box {
+
+    .vnx_box_listslide,
+    .vnx_box_listscroll {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .vnx_box_slide {
+        padding: 12px;
+        max-height: 268px;
+        // max-width: 212px;
+
+        @media screen and (max-width: 768px) {
+          max-height: 212px;
+          // width: 245px;
+          // min-width: 245px;
+          padding: 12px 8px;
+
+        }
+
+        .vnx_slide {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          gap: 8px;
+          height: 100%;
+
+          @media screen and (max-width: 768px) {
+            gap: 12px;
+          }
+
+          .box {
+            &.first {
+              .box_content {
+                height: 72px;
+                max-height: 72px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+                @media screen and (max-width: 768px) {
+                  height: 44px;
+                  max-height: 44px;
+                }
+
+                .text {
+                  color: #525666;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 24px;
+
+                  @media screen and (max-width: 768px) {
+                    font-size: 12px;
+                    line-height: 22px;
+                  }
+                }
+              }
+            }
+
+            &.second {
+              .box_button {
+                .vnx_btn_redirect {
+                  background-color: #EDFAFF;
+                  border-radius: 4px;
+                  gap: 8px;
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  align-items: center;
+                  justify-content: center;
+
+                  span {
+                    color: #007CFC;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 24px;
+
+                    @media screen and (max-width: 968px) {
+                      font-size: 10px;
+                      font-style: normal;
+                      line-height: 20px;
+
+                    }
+                  }
+
+                  .vnx_icon {
+                    color: #007CFC;
+                  }
+
+                  &:hover {
+                    background-color: #007CFC;
+
+                    span {
+                      color: #FFF;
+                    }
+
+                    .vnx_icon {
+                      color: #FFF;
+                    }
+                  }
+                }
+
+              }
+
+              .box_price {
+                @media screen and (max-width: 768px) {
+                  gap: 4px;
+                }
+
+                .price_original {
+                  .text {
+                    color: #B3B3B3;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-decoration-line: line-through;
+
+                    @media screen and (max-width: 768px) {
+                      font-size: 14px;
+                      line-height: 20px;
+                    }
+                  }
+
+                  .discount {
+                    color: #FF9038;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 18px;
+                    padding: 1px 8px;
+                    border-radius: 16px;
+                    border: 1px solid #FF9038;
+                    background: #FFF4EB;
+                  }
+                }
+
+                .price_reduced {
+                  margin-bottom: 16px;
+
+                  @media screen and (max-width: 768px) {
+                    margin-bottom: 12px;
+                  }
+
+                  .text {
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 36px;
+                    background: linear-gradient(90deg, #F3B847 0%, #F49846 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    @media screen and (max-width: 768px) {
+                      font-size: 16px;
+                      line-height: 26px;
+                    }
+                  }
+
+                  .year {
+                    color: #525666;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+
+                    @media screen and (max-width: 768px) {
+                      font-size: 12px;
+                      line-height: 20px;
+
+                    }
+                  }
+
+                }
+              }
+            }
+
+          }
+        }
+      }
+      .splide__arrows {
+        .splide__arrow {
+          display: flex;
+          width: 42px;
+          height: 42px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border-radius: 999px;
+          background: #FFF;
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+
+          i {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .vnx_box_listscroll {
+      overflow-x: scroll;
+      align-items: stretch;
+      padding-bottom: 12px;
+      gap: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-grey-200, #C0C0C2) transparent;
+
+      /* Chrome, Edge, Safari */
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 999px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--color-grey-200, #C0C0C2);
+        border-radius: 999px;
+      }
+
+      .vnx_box_slide {
+        height: auto;
+        max-height: 212px;
+        max-width: 245px;
+        width: 100%;
+
+      }
+    }
+  }
+}

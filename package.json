@@ -1,0 +1,44 @@
+{
+  "name": "vietnix-center",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "mix watch",
+    "build": "mix",
+    "zip": "yarn run build && node zip.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "@yaireo/tagify": "4.36.0",
+    "alpinejs": "^2.7.3",
+    "autoprefixer": "^10.4.16",
+    "flowbite": "^2.0.0",
+    "laravel-mix": "^6.0.49",
+    "laravel-mix-purgecss": "^6.0.0",
+    "laravel-mix-tailwind": "^0.1.2",
+    "laravel-mix-versionhash": "^2.0.1",
+    "minifier": "^0.8.1",
+    "sass": "^1.69.0",
+    "sass-loader": "13.3.2",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-children": "^2.1.0"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "mime": "^4.0.7",
+    "preline": "^1.9.0",
+    "vue-template-compiler": "^2.7.16",
+    "zip": "^1.2.0"
+  },
+  "resolutions": {
+    "webpack": "5.74.0"
+  },
+  "overrides": {
+    "webpack": "5.74.0"
+  }
+}

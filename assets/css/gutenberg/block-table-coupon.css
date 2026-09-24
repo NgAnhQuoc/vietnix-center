@@ -1,0 +1,302 @@
+/* VNX Table Coupon Styles */
+.vnx-table-coupon {
+    width: 100%;
+    max-width: 100%;
+    margin: 40px 0px 32px 0px !important;
+}
+
+.vnx-table-coupon .vnx-table-coupon-header {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.vnx-table-coupon .vnx-table-coupon-header:hover i {
+    color: #007CFC;
+}
+
+.vnx-table-coupon .vnx-table-coupon-header:hover h3>a {
+    text-decoration: none !important;
+}
+
+.vnx-table-coupon .vnx-table-coupon-header h3>a {
+    color: #424552;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.vnx-table-coupon .vnx-table-coupon-header h3 {
+    padding-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+@media (max-width: 768px) {
+    .vnx-table-coupon {
+        margin: 32px 0px 24px 0px !important;
+    }
+
+
+    .vnx-table-coupon .vnx-table-coupon-header h3>a {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 32px;
+    }
+}
+
+.vnx-coupon-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #C0C0C2;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed;
+    margin-top: 32px !important;
+    margin-bottom: 0px !important;
+}
+
+.vnx-coupon-table .vnx-coupon-row {
+    background-color: #FFF;
+}
+
+.vnx-coupon-table thead {
+    background-color: #EEEEF0;
+}
+
+.vnx-coupon-table th {
+    padding: 12px;
+    text-align: center;
+    color: #000;
+    border-bottom: 1px solid #C0C0C2;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+@media (max-width: 768px) {
+
+    .vnx-coupon-table {
+        margin-top: 24px !important;
+    }
+
+    .vnx-coupon-table th {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.vnx-coupon-table td {
+    border-bottom: 1px solid #C0C0C2;
+}
+
+.vnx-coupon-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Group header styling */
+.vnx-group-header td {
+    background-color: #FFF;
+    border-bottom: 1px solid #C0C0C2;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    padding: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .vnx-group-header td {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px !important;
+    }
+}
+
+/* Group row styling */
+.vnx-coupon-row td {
+    background-color: #FFF;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .vnx-coupon-row td {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px !important;
+    }
+}
+
+/* Coupon code cell styling */
+.vnx-coupon-code {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.vnx-code {
+    overflow: hidden;
+    color: #000;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+@media (max-width: 768px) {
+    .vnx-coupon-code {
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+    }
+
+    .vnx-code {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+}
+
+.vnx-cycle-text {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+@media (max-width: 768px) {
+    .vnx-cycle-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+/* Get code button styling */
+.vnx-get-code-btn {
+    border-radius: 4px;
+    background: linear-gradient(90deg, #F3B847 0%, #F49846 100%);
+    border: none;
+    padding: 0px 8px;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 80px;
+    width: 116px;
+    height: 32px;
+}
+
+.vnx-get-code-btn.mobile-btn {
+    display: none;
+    width: 30px;
+    height: 24px;
+    padding: 0px 8px;
+    min-width: auto;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .vnx-get-code-btn {
+        display: none;
+    }
+
+    .vnx-get-code-btn.mobile-btn {
+        display: flex;
+    }
+}
+
+.vnx-get-code-btn:hover {
+    border-radius: 4px;
+    background: linear-gradient(104deg, #FF9400 0%, #FFC500 100%);
+}
+
+.vnx-get-code-btn:active {
+    border-radius: 4px;
+    background: linear-gradient(104deg, #FF9400 0%, #FFC500 100%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .vnx-coupon-table {
+        font-size: 13px;
+    }
+
+    .vnx-coupon-table th,
+    .vnx-coupon-table td {
+        padding: 12px 8px;
+    }
+
+    .vnx-coupon-code {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .vnx-get-code-btn {
+        width: 100%;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vnx-coupon-table {
+        font-size: 12px;
+    }
+
+    .vnx-coupon-table th,
+    .vnx-coupon-table td {
+        padding: 10px 6px;
+    }
+
+    .vnx-coupon-table th:first-child,
+    .vnx-coupon-table td:first-child {
+        min-width: 120px;
+    }
+}
+
+/* Animation for button state change */
+.vnx-get-code-btn.copied {
+    background-color: #28a745 !important;
+    animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Print styles */
+@media print {
+    .vnx-table-coupon {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .vnx-get-code-btn {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+    }
+}

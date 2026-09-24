@@ -1,0 +1,17 @@
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+@import "./components/typography";
+@import "./components/breadcrumbs.scss";
+@import "./components/pagination";
+@import "./components/policy.scss";
+@import "./components/post_content";
+@import "./components/single_post";
+@import "./components/block";
+
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+}

@@ -1,0 +1,215 @@
+.vnx-blockquote-block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block {
+    padding: 4px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.vnx-blockquote-block a,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block a {
+    text-decoration: none;
+}
+
+.vnx-blockquote-block .vnx-blockquote-icon,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block .vnx-blockquote-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: scale-down;
+    object-position: center;
+    margin-top: .34em;
+}
+
+.vnx-blockquote-block .vnx_flex,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block .vnx_flex,
+.vnx-blockquote-block.list_block li a,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.list_block li a {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.vnx-blockquote-block .vnx-blockquote-content>p:first-child,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block .vnx-blockquote-content>p:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.vnx-blockquote-block .vnx-blockquote-content>p:last-child,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block .vnx-blockquote-content>p:last-child {
+    margin-bottom: 0;
+}
+
+/* list_block */
+.vnx-blockquote-block.list_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.list_block {
+    background-color: #38A7FF1A;
+}
+
+.vnx-blockquote-block.list_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.list_block .vnx_block_wrapper {
+    border: solid 1px #38A7FF;
+    background: #EBF6FF;
+}
+
+.vnx-blockquote-block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block .vnx_block_wrapper {
+    padding: 8px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.vnx-blockquote-block .blockquote_title,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block .blockquote_title {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    padding-top: 0;
+}
+
+.vnx-blockquote-block.list_block ul,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.list_block ul {
+    margin: 0;
+    padding: 0 !important;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px 0;
+}
+
+.vnx-blockquote-block.list_block li,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.list_block li {
+    list-style: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1;
+}
+
+.vnx-blockquote-block.list_block li a,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.list_block li a {
+    color: #348EFE;
+    line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+
+    .vnx-blockquote-block,
+    .brxe-post-content .ftwp-postcontent .vnx-blockquote-block,
+    .vnx-blockquote-block .blockquote_title,
+    .brxe-post-content .ftwp-postcontent .vnx-blockquote-block .blockquote_title {
+        font-size: 16px;
+    }
+
+    .vnx-blockquote-block .vnx-blockquote-icon,
+    .brxe-post-content .ftwp-postcontent .vnx-blockquote-block .vnx-blockquote-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* info_block */
+.vnx-blockquote-block.info_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.info_block {
+    background-color: #38A7FF1A;
+    color: #525666;
+}
+
+.vnx-blockquote-block.info_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.info_block .vnx_block_wrapper {
+    border: solid 1px #38A7FF;
+    background: #EBF6FF;
+}
+
+/* quote_block */
+.vnx-blockquote-block.quote_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.quote_block {
+    background-color: #219A211A;
+    color: #525666;
+}
+
+.vnx-blockquote-block.quote_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.quote_block .vnx_block_wrapper {
+    border: solid 1px #219A21;
+    background: #E3F8E3;
+}
+
+/* example_block */
+.vnx-blockquote-block.example_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.example_block {
+    background-color: #FFF0001A;
+    color: #525666;
+}
+
+.vnx-blockquote-block.example_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.example_block .vnx_block_wrapper {
+    border: solid 1px #FFF000;
+    background: #FFFBD4;
+}
+
+/* error_block */
+.vnx-blockquote-block.error_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.error_block {
+    background-color: #F14C2E1A;
+    color: #525666;
+}
+
+.vnx-blockquote-block.error_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.error_block .vnx_block_wrapper {
+    border: solid 1px #F14C2E;
+    background: #FFE2DD;
+}
+
+/* price_block */
+.vnx-blockquote-block.price_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.price_block {
+    background-color: #5256661A;
+    color: #525666;
+}
+
+.vnx-blockquote-block.price_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.price_block .vnx_block_wrapper {
+    border: solid 1px #525666;
+    background: #EEEEF0;
+}
+
+/* warning_block */
+.vnx-blockquote-block.warning_block,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.warning_block {
+    background-color: #FF90381A;
+    color: #525666;
+}
+
+.vnx-blockquote-block.warning_block .vnx_block_wrapper,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.warning_block .vnx_block_wrapper {
+    border: solid 1px #FF9038;
+    background: #FFF4EB;
+}
+
+.vnx-blockquote-block.warning_block .blockquote_title,
+.brxe-post-content .ftwp-postcontent .vnx-blockquote-block.warning_block .blockquote_title {
+    color: #FF9038;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+ .vnx-blockquote-block.list_block .vnx_block_wrapper ul li.item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+ }
+ @media (max-width: 640px) {
+ .vnx-blockquote-block.list_block .vnx_block_wrapper ul li.item{
+    gap: 4px;
+ }
+}

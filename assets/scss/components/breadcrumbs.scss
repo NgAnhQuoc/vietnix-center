@@ -1,0 +1,15 @@
+/* purgecss start ignore */
+ul.breadcrumbs {
+  display: flex;
+
+  li {
+    padding-right: 16px;
+  }
+}
+
+#crumbs {
+  .delimiter {
+    margin: 0 4px;
+  }
+}
+/* purgecss end ignore */

@@ -1,0 +1,346 @@
+.brxe-vnx-theme-posts {
+  &.theme_posts {
+    .vnx-theme-posts-container {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: stretch;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .vnx-theme-posts-sidebar {
+        width: 25%;
+        max-width: 250px;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .vnx-theme-posts-filter-title {
+          margin-bottom: 12px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 8px;
+
+          .vnx_icon {
+            font-size: 16px;
+            height: 24px;
+            width: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          span {
+            color: #000;
+            text-align: center;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px;
+
+            @media screen and (max-width: 768px) {
+              color: #000;
+              text-align: center;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+            }
+          }
+        }
+
+        .vnx-theme-posts-filter-separator {
+          height: 1px;
+          background-color: #C0C0C2;
+        }
+
+        .vnx-theme-posts-filter-list {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          height: 100%;
+
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+
+          .vnx-theme-posts-filter-item {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 8px;
+            align-items: center;
+            margin-top: 12px;
+
+            label {
+              margin: 0;
+              color: #000;
+              text-align: center;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 30px;
+            }
+
+            input {
+              height: 24px;
+              width: 24px;
+              border-radius: 2px;
+              border: 1px solid #C0C0C2;
+              background: #FFF;
+
+              &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                pointer-events: none;
+              }
+            }
+          }
+        }
+      }
+
+      .vnx-theme-posts-popup-template {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        left: 0;
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.2);
+        justify-content: center;
+        row-gap: 6px;
+        margin: auto;
+
+        .vnx-theme-posts-popup {
+          background: #fff;
+          width: 100%;
+          margin: auto 16px;
+          padding: 12px 12px 0px 12px;
+          border-radius: 4px;
+
+          .vnx-theme-posts-popup-content {
+            .vnx-theme-posts-popup-header {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: flex-start;
+
+              .vnx-theme-posts-filter-title {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+
+                span {
+                  color: #000;
+                  text-align: center;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 24px;
+                }
+              }
+            }
+
+            .vnx-theme-posts-filter-separator {
+              height: 1px;
+              background-color: #C0C0C2;
+              margin: 12px 0px;
+            }
+
+            .vnx-theme-posts-popup-body {
+              height: 456px;
+              max-height: 456px;
+              overflow: hidden;
+              overflow-y: auto;
+
+              .vnx-theme-posts-filter-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .vnx-theme-posts-filter-item {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  gap: 8px;
+
+                  input {
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 2px;
+                    border: 1px solid #C0C0C2;
+                    background: #FFF;
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                        pointer-events: none;
+                      }
+                  }
+
+                  label {
+                    margin-bottom: 0px;
+
+                    color: #000;
+                    text-align: center;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                  }
+                }
+              }
+            }
+
+            .vnx-theme-posts-popup-footer {
+              padding: 12px 0px;
+              margin-top: 10px;
+
+              .vnx-theme-posts-popup-apply {
+                border-radius: 4px;
+                background: #007CFC;
+                width: 100%;
+                display: flex;
+                padding: 8px 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                //text
+                color: #FCFCFC;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+
+      }
+
+      .vnx-theme-posts-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 75%;
+        min-height: 100%;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+
+        .vnx-theme-posts-grid {
+          gap: 16px;
+          // height: 100%;
+
+          @media screen and (max-width: 768px) {
+            grid-template-columns: auto !important;
+          }
+        }
+
+        .vnx-theme-posts-pagination {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 16px;
+
+          .vnx-theme-pagi-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 8px;
+
+            .vnx-theme-posts-pagination-button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 40px;
+              width: 40px;
+
+              @media screen and (max-width: 768px) {
+                height: 32px;
+                width: 32px;
+              }
+            }
+
+            .vnx-theme-posts-pagination-number {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 40px;
+              width: 40px;
+              //text
+              color: #282829;
+
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 24px;
+
+              &.active {
+                background: #007CFC;
+                color: #FCFCFC;
+              }
+
+              @media screen and (max-width: 768px) {
+                height: 32px;
+                width: 32px;
+                //text
+                font-size: 12px;
+                line-height: 22px;
+              }
+            }
+
+            .vnx-theme-posts-pagination-ellipsis {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+
+        .loading_posts {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #FFF !important;
+          z-index: 10;
+
+          .vnx-loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 5px solid rgba(0, 124, 252, 0.25);
+            border-top-color: #007CFC;
+            border-right-color: #007CFC;
+            border-radius: 50%;
+            animation: vnx-spin 1s linear infinite;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes vnx-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,1124 @@
+// =============================================================================
+// Trang Vietnix › Tool
+// =============================================================================
+
+$vnx-blue: #38a7ff;
+$vnx-blue-dark: #1170be;
+$vnx-blue-deep: #0074cf;
+$vnx-controls: 'input[type="text"], input[type="url"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], input[type="tel"], input[type="date"], input[type="time"], input[type="datetime-local"], select, textarea';
+
+#vnx-tools {
+  [role="tablist"] {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+  }
+
+  // Hang ngang: bo scrollbar ngang khi da chuyen sang layout cot (tu xl tro len).
+  @media (min-width: 1280px) {
+    [role="tablist"]::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+}
+
+// Vue mount sau khi HTML đã render, không có dòng này thì `{{ ... }}` loé lên
+// một nhịp trước khi app khởi động.
+[v-cloak] {
+  display: none !important;
+}
+
+// =============================================================================
+// Vùng nội dung tab
+// =============================================================================
+.vnx-tool-panels {
+  @apply min-w-0;
+
+  // ---------------------------------------------------------------------------
+  // Form control
+  // ---------------------------------------------------------------------------
+  #{$vnx-controls} {
+    @apply #{"!m-0 !w-full !rounded !border !border-gray-300 !bg-white !px-3 !py-2"};
+    @apply #{"!min-h-0 !text-[13px] !leading-5 !text-gray-900 !shadow-none !transition-colors !duration-150"};
+
+    &::placeholder {
+      @apply #{"!text-gray-400"};
+    }
+
+    &:hover:not(:disabled):not([readonly]) {
+      @apply #{"!border-gray-400"};
+    }
+
+    &:focus {
+      @apply #{"!border-[#38a7ff] !outline-none"};
+      box-shadow: 0 0 0 3px rgba(56, 167, 255, 0.18) !important;
+    }
+
+    &:disabled,
+    &[readonly] {
+      @apply #{"!cursor-not-allowed !bg-gray-50 !text-gray-500"};
+    }
+
+    // Biến thể: dùng cho ô nằm trong hàng dày đặc (bảng, repeater).
+    &.vnx-input--sm {
+      @apply #{"!px-2 !py-1 !text-xs"};
+    }
+
+    // Chua nut icon nam de len ben phai o nhap.
+    &.vnx-input--with-action {
+      @apply #{"!pr-10"};
+    }
+
+    &.vnx-input--mono {
+      @apply #{"!font-mono"};
+    }
+
+    // Ô nhập sai (JS gắn class này).
+    &.is-invalid {
+      @apply #{"!border-red-400"};
+    }
+  }
+
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"] {
+    &::-webkit-datetime-edit {
+      padding: 0;
+      line-height: 1.25rem;
+    }
+
+    &::-webkit-datetime-edit-fields-wrapper {
+      padding: 0;
+    }
+  }
+
+  textarea {
+    @apply #{"!leading-6"};
+    resize: vertical;
+  }
+
+  select {
+    @apply #{"!pr-8"};
+  }
+
+  .vnx-field--num {
+    #{$vnx-controls} {
+      max-width: 6.5rem;
+    }
+  }
+
+  .vnx-field--xs {
+    #{$vnx-controls} {
+      max-width: 8.5rem;
+    }
+  }
+
+  .vnx-field--sm {
+    #{$vnx-controls} {
+      max-width: 11rem;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply #{"!m-0 !shrink-0 !align-middle"};
+  }
+
+  input[type="file"] {
+    @apply #{"!m-0 !block !w-full !cursor-pointer !rounded !border !border-gray-300 !bg-gray-50 !p-2 !text-[13px] !text-gray-700"};
+  }
+
+  .vnx-table a,
+  .vnx-help a,
+  .vnx-card__title a,
+  .vnx-alert a {
+    @apply text-[#1170be];
+
+    &:hover {
+      @apply text-[#0074cf];
+    }
+  }
+}
+
+// =============================================================================
+// Ô nhập dạng tag (Tagify)
+// =============================================================================
+.vnx-tool-panels {
+  .tagify {
+    @apply flex w-full flex-wrap items-center gap-0 rounded border border-gray-300 bg-white transition-colors duration-150;
+    // Bằng chiều cao ô nhập một dòng (20px line-height + 8px*2 padding + 1px*2 border)
+    min-height: 2.375rem;
+    padding: 0.1875rem 0.375rem;
+    --tag-bg: #e0f2fe; // sky-100
+    --tag-text-color: #075985; // sky-800
+    --tag-remove-btn-color: currentColor;
+
+    &:hover {
+      @apply border-gray-400;
+    }
+
+    &--focus {
+      @apply border-[#38a7ff];
+      box-shadow: 0 0 0 3px rgba(56, 167, 255, 0.18);
+    }
+
+    // Tagify tự gắn class này khi giá trị không qua được pattern/whitelist.
+    &--invalid {
+      @apply border-red-400;
+    }
+
+    &[readonly],
+    &[disabled] {
+      @apply cursor-not-allowed bg-gray-50;
+    }
+  }
+
+  .tagify__tag {
+    @apply m-0 mr-1.5 my-0.5 rounded;
+
+    > div {
+      @apply px-2 py-0.5;
+    }
+
+    .tagify__tag-text {
+      @apply text-xs font-medium leading-5;
+    }
+
+    // Nút xoá của Tagify mặc định là hình tròn xám, đổi cho hợp tông tag.
+    .tagify__tag__removeBtn {
+      @apply ml-0.5 opacity-60;
+
+      &:hover {
+        @apply opacity-100;
+        background: rgba(2, 132, 199, 0.18);
+      }
+    }
+  }
+
+  // Vùng gõ chữ nằm sau các tag.
+  .tagify__input {
+    @apply m-0 my-0.5 px-1 text-[13px] leading-5 text-gray-900;
+
+    &::before {
+      @apply text-gray-400; // placeholder
+    }
+  }
+
+  .tagify--select .tagify__tag {
+    @apply mr-8;
+  }
+}
+
+// Dropdown gợi ý mọc ra ngoài .vnx-tool-panels (Tagify gắn vào body) nên phải
+// khai ở cấp gốc. Dùng ở Telegram & Sheets, nơi các ô có whitelist sẵn.
+.tagify__dropdown {
+  @apply z-[100000];
+
+  .tagify__dropdown__wrapper {
+    @apply rounded border border-gray-200 bg-white shadow-lg;
+  }
+
+  .tagify__dropdown__item {
+    @apply m-0 rounded-none px-3 py-2 text-[13px] leading-5 text-gray-700;
+
+    &--active,
+    &:hover {
+      @apply bg-gray-50 text-gray-900;
+    }
+  }
+}
+
+// =============================================================================
+// Đầu mỗi tab: icon + tên tool + mô tả (dựng từ registry trong tools_layout.php)
+// =============================================================================
+.vnx-tool-head {
+  @apply mb-5 flex items-start gap-3 border-b border-gray-100 pb-4;
+
+  &__icon {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded text-sm;
+    color: $vnx-blue;
+    background: rgba(56, 167, 255, 0.1);
+  }
+
+  &__title {
+    @apply m-0 text-base font-semibold leading-6 text-gray-900;
+  }
+
+  &__desc {
+    @apply m-0 mt-0.5 text-[13px] leading-5 text-gray-500;
+  }
+}
+
+// =============================================================================
+// Thanh chọn form (Telegram & Sheets - dùng select vì có thể có rất nhiều form,
+// tab ngang sẽ vỡ layout). Nền xanh nhạt để tách bạch hẳn khỏi card cấu hình
+// trắng bên dưới, thay vì trông như một card giống hệt các card kia.
+// =============================================================================
+.vnx-form-switcher {
+  @apply flex flex-wrap items-center gap-3 rounded border border-sky-100 px-4 py-3;
+  background: rgba(56, 167, 255, 0.06);
+
+  &__icon {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded text-sm;
+    color: $vnx-blue;
+    background: rgba(56, 167, 255, 0.14);
+  }
+
+  &__body {
+    @apply min-w-0 flex-1;
+  }
+
+  &__label {
+    @apply m-0 block cursor-pointer text-[13px] font-semibold leading-5 text-gray-800;
+  }
+
+  &__desc {
+    @apply m-0 mt-0.5 text-xs leading-4 text-gray-500;
+  }
+
+  &__select {
+    @apply w-full sm:w-72;
+  }
+}
+
+// =============================================================================
+// Bố cục
+// =============================================================================
+// Chỉ có ĐÚNG HAI khổ cho nội dung một tab, để bấm qua lại giữa các tool thì mép
+// phải của card đứng yên. Khổ form là mặc định nên tool mới tự đúng, không phải nhớ
+// thêm class; chỉ tool nào có bảng dữ liệu nhiều cột mới phải xin --wide.
+.vnx-panel {
+  @apply flex flex-col gap-5;
+  @apply max-w-7xl; // khổ form (~1024px)
+}
+
+// Bảng nhiều cột thì đọc ở khổ form quá chật. Đặt ở gốc panel, rồi bọc riêng phần
+// form/trạng thái rỗng trong một .vnx-panel lồng bên trong để chúng vẫn giữ khổ form
+// - xem views/tools/vietnix_filter_posts.php.
+.vnx-panel--wide {
+  @apply max-w-[1400px];
+}
+
+.vnx-card {
+  @apply rounded border border-gray-200 bg-white p-4 sm:p-5;
+
+  &__title {
+    @apply m-0 mb-4 flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.04em] text-gray-500;
+
+    svg,
+    i {
+      @apply h-4 w-4 shrink-0 text-[#38a7ff];
+      font-size: 0.875rem;
+    }
+  }
+
+  // Tiêu đề section thứ hai trở đi trong cùng một card: cần khoảng thở phía trên.
+  &__title--sub {
+    @apply mt-6;
+  }
+
+  // Tiêu đề nằm trong hàng ngang cùng nhóm nút: bỏ margin dưới cho khỏi lệch trục.
+  &__title--flush {
+    @apply mb-0;
+  }
+
+  // Mô tả nằm ngay dưới tiêu đề: kéo lên sát tiêu đề, giữ khoảng cách với field.
+  &__desc {
+    @apply -mt-2 mb-4 text-xs leading-5 text-gray-500;
+  }
+
+  &__footer {
+    @apply mt-5 flex flex-wrap items-center gap-3 border-t border-gray-100 pt-4;
+  }
+}
+
+// Lưới chia đều - CHỈ dùng cho khối ngang hàng thật sự (card cạnh card).
+// Field thì dùng .vnx-fields, xem lý do ở phần Field bên dưới.
+.vnx-grid {
+  @apply grid gap-x-4 gap-y-4;
+
+  &--2 {
+    @apply sm:grid-cols-2;
+  }
+
+  &--3 {
+    @apply sm:grid-cols-2 lg:grid-cols-3;
+  }
+}
+
+.vnx-actions {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+// =============================================================================
+// Field
+// =============================================================================
+.vnx-fields {
+  @apply flex flex-wrap items-start gap-x-4 gap-y-4;
+
+  > .vnx-field {
+    flex: 1 1 16rem;
+  }
+
+  > .vnx-field--num,
+  > .vnx-field--xs {
+    flex: 0 1 12rem;
+  }
+
+  > .vnx-field--sm {
+    flex: 0 1 13rem;
+  }
+
+  > .vnx-field--md {
+    flex: 1 1 15rem;
+  }
+
+  > .vnx-field--lg {
+    flex: 1 1 24rem;
+  }
+
+  > .vnx-field--full {
+    flex: 1 1 100%;
+  }
+
+  // Rộng đúng bằng nội dung, không co không giãn. Dùng cho field gói sẵn nhiều ô
+  // bên trong (khoảng ngày), vì các ô con đã tự khai độ rộng rồi.
+  > .vnx-field--auto {
+    flex: 0 0 auto;
+  }
+
+  // Hàng không có nhãn (repeater, ô nhập kèm nút): không phải chừa chỗ cho chữ
+  // nên cột ôm sát ô nhập luôn.
+  &--tight {
+    @apply items-center gap-x-3 gap-y-2;
+
+    > .vnx-field--num {
+      flex: 0 0 6.5rem;
+    }
+
+    > .vnx-field--xs {
+      flex: 0 0 8.5rem;
+    }
+
+    > .vnx-field--sm {
+      flex: 0 0 11rem;
+    }
+  }
+}
+
+.vnx-field {
+  @apply min-w-0;
+
+  // max-width áp cả khi field đứng một mình ngoài .vnx-fields, để nó giữ đúng
+  // cỡ thay vì kéo hết chiều ngang card.
+  &--num,
+  &--xs {
+    max-width: 12rem;
+  }
+
+  &--sm {
+    max-width: 13rem;
+  }
+
+  &--md {
+    max-width: 22rem;
+  }
+
+  &--lg {
+    max-width: 36rem;
+  }
+
+  &--full {
+    max-width: 100%;
+  }
+}
+
+.vnx-label {
+  @apply mb-1.5 block text-[13px] font-medium leading-5 text-gray-700;
+}
+
+.vnx-label__req {
+  @apply text-red-500;
+}
+
+.vnx-help {
+  @apply mt-1.5 text-xs leading-5 text-gray-500;
+
+  code {
+    @apply rounded bg-gray-100 px-1 py-0.5 font-mono text-[11px] text-gray-700;
+  }
+}
+
+.vnx-help--warning {
+  @apply text-amber-600;
+}
+
+.vnx-error {
+  @apply mt-1.5 text-xs leading-5 text-red-600;
+
+  &:empty {
+    @apply hidden;
+  }
+}
+
+// Hàng lựa chọn (checkbox / radio) - ép chữ và ô về cùng đường baseline.
+.vnx-check {
+  @apply inline-flex cursor-pointer items-center gap-2 text-[13px] leading-5 text-gray-700;
+
+  label {
+    @apply m-0 cursor-pointer;
+  }
+}
+
+// =============================================================================
+// Button
+// =============================================================================
+.vnx-btn {
+  @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded border border-transparent px-4 py-2;
+  @apply text-[13px] font-medium leading-5 no-underline shadow-none transition-colors duration-150;
+
+  svg,
+  i {
+    @apply h-4 w-4 shrink-0;
+    font-size: 0.875rem;
+  }
+
+  &:focus {
+    @apply outline-none;
+    box-shadow: 0 0 0 3px rgba(56, 167, 255, 0.25);
+  }
+
+  &:disabled,
+  &[disabled] {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  // Nút mở hộp xác nhận (confirm.js): con trỏ "?" báo trước sẽ có hộp thoại hỏi lại,
+  // khác với nút submit/hành động trực tiếp dùng con trỏ pointer.
+  &[data-vnx-confirm] {
+    cursor: help;
+  }
+
+  &--primary {
+    @apply bg-[#38a7ff] text-white hover:bg-[#1170be];
+
+    &:hover {
+      @apply text-white;
+    }
+  }
+
+  &--success {
+    @apply bg-emerald-600 text-white hover:bg-emerald-700;
+
+    &:hover {
+      @apply text-white;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.25);
+    }
+  }
+
+  &--danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+
+    &:hover {
+      @apply text-white;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
+    }
+  }
+
+  &--warning {
+    @apply bg-amber-500 text-white hover:bg-amber-600;
+
+    &:hover {
+      @apply text-white;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+    }
+  }
+
+  // Nút phụ: viền xám, nền trắng - dùng cho Reset / Cancel / thao tác không phá huỷ.
+  &--ghost {
+    @apply border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900;
+  }
+
+  &--sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  // Nut chi co icon: ep thanh hinh vuong dung bang chieu cao nut chu cung co,
+  // neu de padding rieng thi no cao hon nut chu va ca hang bi lech.
+  // 38px = leading-5 + py-2 x2 + vien; 30px = text-xs + py-1.5 x2 + vien.
+  &--icon {
+    @apply h-[38px] w-[38px] p-0;
+  }
+
+  &--icon#{&}--sm {
+    @apply h-[30px] w-[30px] p-0;
+  }
+
+  // Nút xoá một dòng trong repeater.
+  &--remove {
+    @apply border-transparent bg-transparent px-2 py-2 text-gray-400 hover:bg-red-50 hover:text-red-600;
+  }
+}
+
+// =============================================================================
+// Alert (tĩnh, nằm trong luồng nội dung)
+// =============================================================================
+.vnx-alert {
+  @apply flex items-start gap-2.5 rounded border p-3 text-[13px] leading-5;
+
+  svg,
+  i {
+    @apply mt-0.5 h-4 w-4 shrink-0;
+    font-size: 0.875rem;
+  }
+
+  p {
+    @apply m-0;
+  }
+
+  &--info {
+    @apply border-sky-200 bg-sky-50 text-sky-800;
+  }
+
+  &--success {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-800;
+  }
+
+  &--warning {
+    @apply border-amber-200 bg-amber-50 text-amber-800;
+  }
+
+  &--error {
+    @apply border-red-200 bg-red-50 text-red-800;
+  }
+}
+
+// =============================================================================
+// Hộp xác nhận (dựng bởi assets/js/admin/confirm.js)
+// =============================================================================
+.vnx-modal {
+  // Thanh admin bar của WordPress đứng ở z-index 99999, phải vượt lên trên.
+  @apply fixed inset-0 flex items-center justify-center p-4;
+  z-index: 100001;
+
+  // Đặt sau rule display:flex ở trên thì mới thắng được nó.
+  &[hidden] {
+    display: none;
+  }
+
+  &__backdrop {
+    @apply absolute inset-0;
+    background: rgba(17, 24, 39, 0.5);
+  }
+
+  &__dialog {
+    @apply relative flex w-full max-w-md flex-wrap items-start gap-x-3 gap-y-4 rounded border border-gray-200 bg-white p-5 shadow-2xl;
+    animation: vnx-modal-in 0.14s ease-out;
+  }
+
+  // Modal có form nhiều field (không phải hộp xác nhận đơn giản) cần rộng hơn max-w-md mặc định.
+  &__dialog--lg {
+    @apply max-w-lg;
+  }
+
+  // Form nhiều field hơn nữa (vd. lịch hẹn: nhãn, phạm vi, URL, loại lịch, giờ...) cần rộng hơn --lg.
+  &__dialog--xl {
+    @apply max-w-2xl;
+  }
+
+  &__icon {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded;
+
+    svg {
+      @apply h-5 w-5;
+    }
+  }
+
+  &__body {
+    @apply min-w-0 flex-1;
+  }
+
+  &__title {
+    @apply m-0 text-[15px] font-semibold leading-6 text-gray-900;
+  }
+
+  &__text {
+    @apply m-0 mt-1 text-[13px] leading-5 text-gray-600;
+
+    &:empty {
+      @apply hidden;
+    }
+  }
+
+  &__actions {
+    @apply flex w-full flex-wrap items-center justify-end gap-2 border-t border-gray-100 pt-4;
+  }
+
+  // Màu của icon nói mức độ nguy hiểm, không chỉ để trang trí.
+  &__dialog--danger .vnx-modal__icon {
+    @apply bg-red-100 text-red-600;
+  }
+
+  &__dialog--warning .vnx-modal__icon {
+    @apply bg-amber-100 text-amber-600;
+  }
+
+  &__dialog--primary .vnx-modal__icon {
+    color: $vnx-blue;
+    background: rgba(56, 167, 255, 0.12);
+  }
+}
+
+@keyframes vnx-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+}
+
+// =============================================================================
+// Toast (nổi, dùng chung qua views/tools/partials/toast.php)
+// =============================================================================
+.vnx-toast {
+  @apply fixed right-8 top-16 z-[9999] flex w-full max-w-sm items-start gap-3 rounded border border-gray-200 bg-white p-3.5 text-[13px] leading-5 text-gray-700 shadow-lg;
+
+  &__icon {
+    @apply flex h-7 w-7 shrink-0 items-center justify-center rounded;
+
+    svg {
+      @apply h-4 w-4;
+    }
+  }
+
+  &__body {
+    @apply min-w-0 flex-1 break-words pt-1;
+  }
+
+  &__close {
+    @apply -mr-1 -mt-1 inline-flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded border-0 bg-transparent p-0 text-gray-400 hover:bg-gray-100 hover:text-gray-700;
+
+    svg {
+      @apply h-3 w-3;
+    }
+  }
+
+  &--success {
+    @apply border-emerald-200;
+
+    .vnx-toast__icon {
+      @apply bg-emerald-100 text-emerald-600;
+    }
+  }
+
+  &--error {
+    @apply border-red-200;
+
+    .vnx-toast__icon {
+      @apply bg-red-100 text-red-600;
+    }
+  }
+}
+
+// =============================================================================
+// Bảng
+// =============================================================================
+.vnx-table-wrap {
+  @apply overflow-x-auto rounded border border-gray-200;
+}
+
+.vnx-table {
+  @apply w-full border-collapse text-left text-[13px] text-gray-700;
+
+  th,
+  td {
+    @apply px-3 py-2.5 align-middle;
+  }
+
+  thead th {
+    @apply whitespace-nowrap border-b border-gray-200 bg-gray-50 text-[11px] font-semibold uppercase tracking-[0.04em] text-gray-500;
+  }
+
+  tbody td {
+    @apply border-b border-gray-100;
+  }
+
+  tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  tbody tr:hover td {
+    background: rgba(56, 167, 255, 0.05);
+  }
+}
+
+// Nut icon tran (khong vien, khong nen) di kem mot nhan/badge trong bang.
+// Cao bang badge de nam cung mot hang ngang, khong day chieu cao dong.
+.vnx-icon-link {
+  @apply inline-flex h-6 w-6 shrink-0 cursor-pointer items-center justify-center rounded border-0 bg-transparent p-0 text-gray-400;
+  @apply transition-colors hover:bg-gray-100 hover:text-gray-700;
+
+  svg {
+    @apply h-4 w-4;
+  }
+
+  &:focus {
+    @apply outline-none;
+    box-shadow: 0 0 0 3px rgba(56, 167, 255, 0.25);
+  }
+}
+
+// =============================================================================
+// Badge
+// =============================================================================
+.vnx-badge {
+  @apply inline-flex items-center rounded px-2 py-0.5 text-[11px] font-semibold leading-5;
+
+  &--gray {
+    @apply bg-gray-100 text-gray-600;
+  }
+
+  &--blue {
+    @apply bg-sky-100 text-sky-700;
+  }
+
+  &--green {
+    @apply bg-emerald-100 text-emerald-700;
+  }
+
+  &--red {
+    @apply bg-red-100 text-red-700;
+  }
+
+  &--amber {
+    @apply bg-amber-100 text-amber-700;
+  }
+
+  &--orange {
+    @apply bg-orange-100 text-orange-700;
+  }
+
+  &--purple {
+    @apply bg-purple-100 text-purple-700;
+  }
+}
+
+// =============================================================================
+// Tab con bên trong một tool (Import Docs, AI Search, UTM Tracker) - đồng thời
+// dùng cho subtab Bricks/Gutenberg ở trang Settings (điều khiển bởi Preline HSTabs).
+// =============================================================================
+// Khoang cach voi noi dung ben duoi do .vnx-panel (flex + gap) lo, khong dat margin o day.
+.vnx-subtabs {
+  @apply flex flex-wrap items-center gap-1 border-b border-gray-200;
+
+  &--vertical {
+
+    @apply w-full flex-col flex-nowrap items-stretch gap-1.5 border-b-0 border-l border-gray-200 lg:w-52 lg:shrink-0 lg:border-l-0 lg:border-r lg:pr-5;
+
+    .vnx-subtab {
+      @apply -ml-px mb-0 w-full justify-start rounded-none px-3 py-2.5 text-left;
+      box-shadow: none;
+
+      &:hover {
+        background: rgba(17, 24, 39, 0.035);
+      }
+
+      &.is-active,
+      &.active {
+        box-shadow: inset 3px 0 0 $vnx-blue;
+        background: rgba(56, 167, 255, 0.08);
+        font-weight: 600;
+
+        &:hover {
+          background: rgba(56, 167, 255, 0.08);
+        }
+      }
+    }
+  }
+}
+
+.vnx-subtab {
+  @apply relative -mb-px inline-flex items-center gap-1.5 cursor-pointer border-0 bg-transparent px-3.5 py-2.5 text-[13px] font-medium leading-5 text-gray-600 no-underline transition-colors duration-150;
+
+  svg,
+  i {
+    @apply mr-1.5 h-4 w-4;
+    font-size: 0.875rem;
+  }
+
+  &:hover {
+    @apply text-gray-800;
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  // .is-active: gắn thủ công qua Vue (:class). .active: do Preline HSTabs tự toggle.
+  &.is-active,
+  &.active {
+    color: $vnx-blue-dark;
+    font-weight: 600;
+    box-shadow: inset 0 -2px 0 $vnx-blue;
+  }
+}
+
+// =============================================================================
+// Trạng thái rỗng / đang tải / tiến trình
+// =============================================================================
+.vnx-empty {
+  @apply flex flex-col items-center justify-center rounded border border-dashed border-gray-200 px-6 py-14 text-center;
+
+  svg {
+    @apply mb-3 h-12 w-12 text-gray-300;
+  }
+
+  p {
+    @apply m-0 text-[13px] text-gray-500;
+  }
+}
+
+.vnx-loading {
+  @apply flex items-center justify-center gap-3 py-12 text-[13px] text-gray-500;
+}
+
+.vnx-spinner {
+  @apply h-4 w-4 shrink-0 animate-spin;
+
+  &--lg {
+    @apply h-10 w-10;
+  }
+}
+
+.vnx-progress {
+  @apply h-2 w-full overflow-hidden rounded-full bg-gray-200;
+
+  &__bar {
+    @apply h-full rounded-full transition-all duration-500;
+    background: $vnx-blue;
+  }
+}
+
+// Lớp phủ mờ khi tool đang chạy tác vụ dài.
+.vnx-overlay {
+  @apply fixed inset-0 z-[9998] flex items-center justify-center bg-gray-900/40;
+}
+
+.vnx-code {
+  @apply m-0 overflow-x-auto rounded border border-gray-200 bg-gray-50 p-3 font-mono text-[11px] leading-5 text-gray-700;
+}
+
+// =============================================================================
+// Drawer hướng dẫn (assets/js/admin/help_drawer.js)
+// =============================================================================
+.vnx-drawer {
+  @apply fixed inset-0;
+  z-index: 100001;
+
+  &[hidden] {
+    display: none;
+  }
+
+  &__backdrop {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-200;
+    background: rgba(17, 24, 39, 0.45);
+  }
+
+  &__panel {
+    @apply absolute inset-y-0 right-0 flex w-full translate-x-full flex-col bg-white shadow-2xl transition-transform duration-200 sm:w-2/3;
+
+    &:focus {
+      @apply outline-none;
+    }
+  }
+
+  &.is-open {
+    .vnx-drawer__backdrop {
+      @apply opacity-100;
+    }
+
+    .vnx-drawer__panel {
+      @apply translate-x-0;
+    }
+  }
+
+  &__header {
+    @apply flex items-center justify-between gap-3 border-b border-gray-200 px-6 py-5;
+  }
+
+  &__title {
+    @apply m-0 text-lg font-semibold text-gray-900;
+  }
+
+  &__close {
+    @apply -mr-1.5 inline-flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded border-0 bg-transparent p-0 text-gray-400 hover:bg-gray-100 hover:text-gray-700;
+
+    svg {
+      @apply h-4 w-4;
+    }
+  }
+
+  &__body {
+    @apply flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto p-6 sm:flex-row;
+  }
+
+  .vnx-subtabs--vertical {
+    @apply sm:border-r sm:border-l-0 sm:pr-5;
+  }
+
+  &__panels {
+    @apply min-w-0 max-w-3xl flex-1;
+  }
+
+  &__panel-content.hidden {
+    display: none;
+  }
+
+  &__panel-content {
+    @apply flex flex-col gap-6;
+  }
+
+  &__lead {
+    @apply m-0 text-[15px] font-medium leading-6 text-gray-800;
+  }
+
+  &__list,
+  &__steps {
+    // gap phải lớn hơn leading-6 (24px) của text bên trong, nếu không khoảng
+    // cách giữa 2 bullet sẽ nhỏ hơn khoảng cách giữa 2 dòng chữ trong cùng 1
+    // bullet - nhìn vào sẽ thấy khoảng cách to nhỏ lộn xộn thay vì đều nhau.
+    @apply m-0 flex list-none flex-col gap-4 p-0 text-sm leading-6 text-gray-600;
+
+    strong {
+      @apply font-semibold text-gray-800;
+    }
+
+    code {
+      @apply rounded bg-gray-100 px-1 py-0.5 font-mono text-[12px] text-gray-700;
+    }
+  }
+
+  &__list li {
+    @apply relative pl-5;
+
+    &::before {
+      content: "";
+      @apply absolute left-0 top-[0.6em] h-1.5 w-1.5 rounded-full;
+      background: $vnx-blue;
+    }
+  }
+
+  &__steps {
+    counter-reset: vnx-step;
+
+    li {
+      @apply relative pl-8;
+
+      &::before {
+        counter-increment: vnx-step;
+        content: counter(vnx-step);
+        @apply absolute left-0 top-0 flex h-5 w-5 items-center justify-center rounded-full text-[11px] font-semibold text-white;
+        background: $vnx-blue;
+      }
+    }
+  }
+
+  &__tip {
+    @apply flex items-start gap-3 rounded border p-3.5 text-sm leading-6;
+
+    i {
+      @apply mt-0.5 h-4 w-4 shrink-0 text-[0.875rem];
+    }
+
+    p {
+      @apply m-0;
+    }
+
+    &--info {
+      @apply border-sky-200 text-sky-800;
+      background: rgba(56, 167, 255, 0.06);
+
+      i {
+        color: $vnx-blue;
+      }
+    }
+
+    &--warning {
+      @apply border-amber-200 bg-amber-50 text-amber-800;
+
+      i {
+        @apply text-amber-500;
+      }
+    }
+  }
+
+  &__faq {
+    @apply m-0 flex flex-col gap-5;
+  }
+
+  &__faq-item {
+    dt {
+      @apply text-sm font-semibold leading-6 text-gray-900;
+    }
+
+    dd {
+      @apply m-0 mt-1 text-sm leading-6 text-gray-600;
+    }
+  }
+}
+
+// Khoá cuộn trang nền trong lúc drawer mở.
+body.vnx-drawer-lock {
+  overflow: hidden;
+}
+
+// Tooltip CSS thuần (không JS): hover/focus phần tử có [data-tooltip] hiện bong bóng phía trên.
+[data-tooltip] {
+  position: relative;
+
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    z-index: 50;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #1f2937;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.4;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

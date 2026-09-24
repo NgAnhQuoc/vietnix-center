@@ -1,0 +1,38 @@
+.vnx-view-more-block {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.vnx-view-more-block .vnx-row {
+    display: flex;
+}
+.vnx-view-more-block .list {
+    padding-left: 14px !important;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    border-left: solid 8px;
+    margin: 0;
+}
+.vnx-view-more-block .list .list-bullet {
+    height: 1.2em;
+    width: 1.2em;
+    margin-right: 4px;
+}
+.vnx-view-more-block .list .item {
+    padding: 0;
+    margin-bottom: 10px;
+    list-style: none;
+}
+.vnx-view-more-block .list .item:last-child {
+    margin-bottom: 0;
+}
+.vnx-view-more-block .list .item * {
+    display: inline;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.vnx-view-more-block .list .item .before_url {
+    margin-right: 4px;
+}

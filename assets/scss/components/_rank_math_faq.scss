@@ -1,0 +1,71 @@
+#vnx_post_content {
+  .rank-math-block {
+    background: rgba(56, 167, 255, 0.08);
+    .vnx-rank-math-title {
+      margin: 0px;
+      padding: 0px 0px 12px 0px;
+      h2 {
+        padding: 18px 0px 0px 28px !important;
+        margin: 0px;
+        padding-top: 12px;
+        .vnx-rank-math-title-icon {
+          width: 40px;
+          height: 48px;
+          display: block;
+          float: left;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url("https://vietnix.vn/wp-content/uploads/2022/09/Group.svg");
+        }
+        &::after {
+          content: "";
+          border: 0px!important;
+        }
+      }
+    }
+    .rank-math-list {
+      position: relative;
+      border-radius: 4px;
+      padding: 10px 0px;
+
+      .rank-math-list-item {
+        margin: 0px;
+        padding: 0px 30px;
+        border-top: 1px solid #dee6f1;
+        .rank-math-answer {
+          padding-bottom: 20px;
+          p {
+            font-size: 14px;
+            padding-left: 0 !important;
+            color: #4f4f4f !important;
+            margin-bottom: 0 !important;
+            border: none !important;
+          }
+        }
+      }
+      h3 {
+        font-size: 18px !important;
+      }
+    }
+    .rank-math-list .rank-math-question {
+      position: relative;
+      cursor: pointer;
+    }
+    .rank-math-list .rank-math-question:after {
+      content: "\f067";
+      font-family: "Font Awesome 6 Solid";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      z-index: 1;
+      width: 12px;
+      font-size: 16px;
+      color: #828282;
+      transition: all 0.3s;
+    }
+
+    .rank-math-list .rank-math-question.faq-active:after {
+      content: "\f068";
+    }
+  }
+}

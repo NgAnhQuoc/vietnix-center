@@ -1,0 +1,446 @@
+.whois_loading .vnx_wrapper {
+  min-height: 200px;
+  position: relative;
+}
+
+.vnx-check-whois-form .vnx_wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.vnx-check-whois-form .whois_submit_btn {
+  background: linear-gradient(180deg, #ff910f 0%, #f62e13 100%);
+}
+
+.vnx-check-whois-form .whois_submit_btn:hover {
+  background: linear-gradient(180deg, #ffa234 0%, #ff5741 100%);
+}
+
+.vnx-check-whois-form .whois_submit_btn:disabled,
+.vnx-check-whois-form .whois_submit_btn[disabled] {
+  background: linear-gradient(180deg, #d2bb9f 0%, #ac908c 100%);
+}
+
+.vnx-whois-result .vnx_loader-square.vnx_positioning,
+.vnx-suggest-result .vnx_loader-square.vnx_positioning {
+  top: calc(50% - 50px);
+}
+
+.vnx-whois-result .whois-key {
+  color: #4f4f4f;
+}
+
+.vnx-whois-result .vnx_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.vnx-suggest-result .suggest_domain {
+  margin-bottom: 8px;
+}
+
+.vnx-whois-result .whois-value {
+  color: #1c1c28;
+  text-align: right;
+}
+
+.vnx-whois-result .whois-content-domain .whois-value {
+  color: #38a7ff;
+}
+
+.vnx-whois-result .whois_content .vnx_row:nth-child(2n) {
+  background-color: #f8f9fd;
+}
+
+.vnx-suggest-result .vnx_info {
+  flex-grow: 1;
+}
+
+.vnx-suggest-result .domain_tld {
+  color: #fe9842;
+}
+
+.vnx-suggest-result .sale_icon {
+  background-color: #eb5757;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.vnx-suggest-result .suggest_item {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  border: solid 1px #dde1e8;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.vnx-suggest-result .suggest_item:last-of-type {
+  margin-bottom: 0;
+}
+
+/* -------- Landing Page -------- */
+#vnx-whois-result-landingpage #loading_animate {
+  margin-top: 60px;
+  margin-bottom: 700px;
+}
+
+#vnx-whois-result-landingpage #loading_animate .vnx_icon {
+  height: 80px;
+  width: auto;
+}
+
+#vnx-whois-result-landingpage #loading_animate .col_right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#vnx-whois-result-landingpage .progress_outline {
+  height: 22px;
+  box-shadow: 0 0 18px 0px rgb(0 0 0 / 20%) inset;
+  overflow: hidden;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+#vnx-whois-result-landingpage .progress-bar {
+  background-color: #55c7ff;
+  box-shadow: 5px 5px 15px 0px rgba(255, 255, 255, 0.3) inset;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+/* ************************************************************
+************************************************************
+************************************************************ */
+/* ----------- Landingpage - open ----------- */
+
+#vnx-whois-result-landingpage .whois_status {
+  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.08);
+}
+
+#vnx-whois-result-landingpage .whois_status .icon_image {
+  object-fit: scale-down;
+  object-position: center;
+}
+
+#vnx-whois-result-landingpage .domain_available .status,
+.suggest-landingpage.vnx-suggest-result .domain_available .status {
+  color: #219653;
+}
+
+#vnx-whois-result-landingpage .whois_status .col_right,
+.suggest-landingpage.vnx-suggest-result .suggest_item {
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+#vnx-whois-result-landingpage .price_info>*,
+.suggest-landingpage.vnx-suggest-result .suggest_item .price_info>* {
+  display: inline-block;
+}
+
+#vnx-whois-result-landingpage .price_info .tool_tip,
+.suggest-landingpage.vnx-suggest-result .suggest_item .price_info .tool_tip {
+  vertical-align: text-top;
+}
+
+#vnx-whois-result-landingpage .price_info .quest_icon,
+.suggest-landingpage.vnx-suggest-result .suggest_item .quest_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #828282;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+#vnx-whois-result-landingpage .tool_tip_text,
+.suggest-landingpage.vnx-suggest-result .tool_tip_text {
+  right: -8px;
+  min-width: 250px;
+  padding: 11px 13px;
+  width: auto;
+  max-width: unset;
+  background-color: white;
+  bottom: calc(100% + 16px);
+  text-align: left;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+#vnx-whois-result-landingpage .domain-info .tool_tip_text,
+.suggest-landingpage.vnx-suggest-result .domain-info .tool_tip_text {
+  right: -80px;
+  bottom: calc(100% + 9px);
+}
+
+#vnx-whois-result-landingpage .tool_tip_text:before,
+.suggest-landingpage.vnx-suggest-result .tool_tip_text:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: 8px 12px 30px #4f4f4f29;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  background: transparent;
+  border-radius: inherit;
+}
+
+#vnx-whois-result-landingpage .tool_tip_text::after,
+.suggest-landingpage.vnx-suggest-result .tool_tip_text:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  position: absolute;
+  bottom: -8px;
+  right: 10px;
+  transform: rotateZ(45deg);
+}
+
+#vnx-whois-result-landingpage .domain-info .tool_tip_text::after,
+.suggest-landingpage.vnx-suggest-result .domain-info .tool_tip_text:after {
+  right: 78px;
+}
+
+#vnx-whois-result-landingpage .tool_tip:hover .tool_tip_text,
+.suggest-landingpage.vnx-suggest-result .suggest_item .tool_tip:hover .tool_tip_text {
+  display: block !important;
+}
+
+#vnx-whois-result-landingpage .whois_vnx_button,
+.suggest-landingpage.vnx-suggest-result .whois_vnx_button {
+  display: block;
+  width: 260px;
+  text-align: center;
+}
+
+#vnx-whois-result-landingpage .add_to_cart_action.activated,
+.suggest-landingpage.vnx-suggest-result .add_to_cart_action.activated {
+  opacity: 0.5;
+}
+
+#vnx-whois-result-landingpage .whois_view_btn,
+.suggest-landingpage.vnx-suggest-result .suggest_item .whois_view_btn {
+  font-weight: 600;
+  align-self: center;
+  border-color: #4f4f4f;
+}
+
+.vnx-suggest-result.suggest-landingpage .suggest_item {
+  border: none;
+  border-bottom: solid 1px #dde1e8;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.loading_suggest .loading_wrapper {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.loading_icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #3498db;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+}
+
+.suggest_item .temp_loading .domain_checking {
+  flex-grow: 1;
+}
+
+.suggest_item .temp_loading .domain_checking>* {
+  display: inline-block;
+}
+
+.domain_status .domain-info .tool_tip {
+  border-color: #333;
+}
+
+@media (max-width: 768px) {
+  .vnx-whois-result .whois-key {
+    color: #8f90a6;
+  }
+
+  .vnx-whois-result .whois-value {
+    text-align: left;
+  }
+
+  .vnx-whois-result .whois-content-domain .whois-value {
+    color: #3c4859;
+  }
+
+  .vnx-whois-result .whois_content .vnx_row:nth-child(2n) {
+    background-color: transparent;
+  }
+
+  .vnx-whois-result .vnx_row {
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: solid 1px #ebebf0;
+  }
+
+  .vnx-whois-result .whois_content .vnx_row:last-child {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .vnx-suggest-result .suggest_item {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 16px;
+    border: none;
+    border-bottom: dashed 2px #dde1e8;
+    margin-bottom: 16px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+
+  .vnx-suggest-result .suggest_item:last-of-type {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .vnx-suggest-result.suggest-landingpage .suggest_item {
+    align-items: flex-start;
+    border-bottom: none;
+    box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  #vnx-whois-result-landingpage .tool_tip_text,
+  .suggest-landingpage.vnx-suggest-result .tool_tip_text {
+    left: -130px;
+  }
+
+  #vnx-whois-result-landingpage .domain_twocharsvn .tool_tip_text,
+  .suggest-landingpage.vnx-suggest-result .domain_twocharsvn .tool_tip_text,
+  #vnx-whois-result-landingpage .domain_twocharsvn .tool_tip_text::after,
+  .suggest-landingpage.vnx-suggest-result .domain_twocharsvn .tool_tip_text:after {
+    left: unset;
+  }
+
+  #vnx-whois-result-landingpage .tool_tip_text::after,
+  .suggest-landingpage.vnx-suggest-result .tool_tip_text:after {
+    left: 130px;
+  }
+
+  #vnx-whois-result-landingpage #loading_animate {
+    flex-direction: column;
+    position: fixed;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    justify-content: center;
+    padding: 0 10vw;
+    margin: 0;
+  }
+
+  #vnx-whois-result-landingpage #loading_animate .col_right {
+    flex-direction: column-reverse;
+    text-align: center;
+    flex-grow: unset;
+  }
+
+  #vnx-whois-result-landingpage .progress_outline {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+
+  #vnx-whois-result-landingpage .whois_vnx_button,
+  .suggest-landingpage.vnx-suggest-result .whois_vnx_button {
+    width: 100%;
+  }
+
+  #vnx-whois-result-landingpage .vnx_wrap,
+  .suggest-landingpage.vnx-suggest-result .vnx_wrap {
+    min-width: 100%;
+    /* width: 100%; */
+  }
+
+  #vnx-whois-result-landingpage .domain-info .tool_tip_text,
+  .suggest-landingpage.vnx-suggest-result .domain-info .tool_tip_text {
+    right: -20px;
+  }
+
+  #vnx-whois-result-landingpage .domain-info .tool_tip_text::after,
+  .suggest-landingpage.vnx-suggest-result .domain-info .tool_tip_text:after {
+    right: 18px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  #vnx-whois-result-landingpage .domain_twocharsvn .tool_tip_text,
+  .suggest-landingpage.vnx-suggest-result .domain_twocharsvn .tool_tip_text {
+    left: -11px;
+  }
+
+  #vnx-whois-result-landingpage .domain_twocharsvn .tool_tip_text::after,
+  .suggest-landingpage.vnx-suggest-result .domain_twocharsvn .tool_tip_text:after {
+    left: 9px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

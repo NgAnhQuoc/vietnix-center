@@ -1,0 +1,64 @@
+@import "./components/block";
+@import "./components/pagination";
+
+html{
+  @apply antialiased;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  font-family: "Roboto", sans-serif !important;
+  color: #3c4859;
+}
+
+:root, body {
+  font-family: "Roboto", sans-serif !important;
+  line-break: normal;
+}
+
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+}
+
+.input, input:not([type=submit]), select, textarea {
+  line-height: 150%;
+}
+
+button{
+  text-align: center;
+}
+
+body.bricks-is-frontend :focus {
+	outline: none;
+}
+
+.border {
+  border-style: solid;
+  border-color: #e4e6ea
+}
+
+.btn-primary {
+    background: #38a7ff;
+    border-color: #38a7ff;
+}
+
+.page-template-tai-lieu main input[name="s"] {
+	border: none;
+}
+
+.f-14 {
+  font-size: 14px;
+}
+
+[v-cloak] {
+  display: none ;
+}
+

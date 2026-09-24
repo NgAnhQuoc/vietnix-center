@@ -1,0 +1,520 @@
+.break-words {
+  word-break: break-word;
+}
+.vnx_tab_script.group_1 .vnx_table_mobile {
+  box-shadow: 0px 0px 20px rgba(16, 69, 131, 0.15);
+}
+.vnx_tab_script.group_1.vps_price_3 .vnx_table_mobile {
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10);
+}
+.vnx_tab_script.group_1 .vnx-tab-content {
+  display: none;
+}
+.vnx_tab_script.group_1 .vnx-tab-content.is_active {
+  display: block;
+}
+.vnx_tab_script.group_1 .icon-estimating:hover .absolute {
+  display: block;
+}
+.vnx_tab_script.group_1 .icon-estimating .absolute {
+  z-index: 1;
+  box-shadow: none;
+  top: calc(100% + 10px);
+}
+.vnx_tab_script.group_1 .icon-estimating .absolute:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: white;
+  transform: rotateZ(45deg) translateY(50%);
+  top: -12px;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: rotateZ(45deg) translateY(50%);
+  -moz-transform: rotateZ(45deg) translateY(50%);
+  -ms-transform: rotateZ(45deg) translateY(50%);
+  -o-transform: rotateZ(45deg) translateY(50%);
+}
+.vnx_tab_script.group_1 .icon-estimating .absolute:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px #8080808c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.brxe-vnx-table.firewall_2 .vnx_expand_btn:not(.active) .collapse_text,
+.brxe-vnx-table.firewall_2 .vnx_expand_btn.active .expand_text {
+  display: none;
+}
+.brxe-vnx-table.domain_price .inside {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding-left: 0;
+}
+.brxe-vnx-table.domain_price ul.inside li {
+  text-indent: -0.5em;
+  padding-left: 0.5em;
+}
+
+.brxe-vnx-table.domain_price ul.vnx_cs_ul_table li span {
+  color: #28293d;
+  font-size: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: -5px;
+}
+
+.brxe-vnx-table.domain_price ul.vnx_cs_text_total {
+  border-radius: 6px;
+  background: #ebedf7;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.brxe-vnx-table.domain_price .tooltip .tooltiptext {
+  display: none !important;
+  min-width: 322px;
+  top: 100%;
+  left: -148px;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s;
+  z-index: 3;
+}
+
+.brxe-vnx-table.domain_price .vnx_cus_text_total {
+  color: #000;
+  font-size: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.brxe-vnx-table.domain_price .vnx_number_total {
+  color: #eb5757;
+  text-align: right;
+  font-size: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+.brxe-vnx-table.domain_price .free_tooltip {
+  margin-top: -5px;
+}
+.brxe-vnx-table.domain_price .free_tooltip_hover:hover ~ .free_tooltip_data {
+  display: block;
+}
+.brxe-vnx-table.domain_price .free_tooltip_data {
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.12);
+  top: calc(100% + 18px);
+  right: 0;
+  z-index: 1;
+  display: none;
+}
+
+.brxe-vnx-table.domain_price .free_tooltip_data:before {
+  position: absolute;
+  content: "";
+  top: -18px;
+  right: 35px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 18px solid #fff;
+  z-index: 2;
+}
+
+.brxe-vnx-table.domain_price .tooltip:hover .tooltiptext {
+  display: block;
+  z-index: 2;
+}
+.brxe-vnx-table.domain_price .vnx_custom_text_title {
+  color: #000;
+  font-size: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+.brxe-vnx-table.domain_price .vnx_bg_table {
+  border-radius: 16px;
+  background: linear-gradient(134deg, #eaf3fa 0%, #eeeffe 100%);
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.brxe-vnx-table.domain_price .padding_30 {
+  padding: 30px 30px 16px 30px;
+}
+.brxe-vnx-table.domain_price .padding_30_l_r {
+  padding: 0px 30px 30px 30px;
+}
+.brxe-vnx-table.domain_price .font-weight-normal {
+  font-weight: normal;
+}
+.brxe-vnx-table.domain_price .vnx_cus_border_li {
+  border-bottom: 1px solid #eaeff4;
+}
+.brxe-vnx-table.domain_price .vnx-radius-and-border {
+  overflow: hidden;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.brxe-vnx-table.domain_price .vn-bg-button-subscribe {
+  padding: 8px 10px 8px 10px;
+  background-color: #38a7ff;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  display: block;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+}
+.brxe-vnx-table.domain_price .vnx-bg-white {
+  background: white;
+}
+
+.brxe-vnx-table.domain_price .vnx-bg-f9fbfe {
+  background: linear-gradient(
+    136deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+}
+.brxe-vnx-table.domain_price .vnx-bg-white,
+.brxe-vnx-table.domain_price .vnx-bg-f9fbfe {
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(4px);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+.brxe-vnx-table.domain_price ul.vnx-bg-white li,
+.brxe-vnx-table.domain_price ul.vnx-bg-f9fbfe li {
+  padding: 17px 16px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #333333;
+}
+
+.brxe-vnx-table.domain_price .vnx_price_discount {
+  color: #eb5757;
+  text-align: center;
+  font-size: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.brxe-vnx-table.domain_price .vnx_price_cost {
+  color: #828282;
+  text-align: center;
+  font-size: 12px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: line-through;
+}
+
+.brxe-vnx-table.domain_price .nameTLD,
+.brxe-vnx-table.domain_price .price_cost {
+  color: #333333;
+  text-align: center;
+  font-size: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.brxe-vnx-table.domain_price .nameTLD {
+  font-weight: 400 !important;
+}
+
+.brxe-vnx-table.domain_price .vnx_cs_text_ul_table_span {
+  color: #28293d;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.brxe-vnx-table.domain_price .cs-width-column-mobile {
+  width: 20%;
+}
+
+.brxe-vnx-table.domain_price .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 48%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.brxe-vnx-table.domain_price .tooltip .vnx_icon_info {
+  z-index: 2;
+}
+
+.brxe-vnx-table.domain_price .tooltip:hover .tooltiptext {
+  display: block;
+  z-index: 1;
+}
+.vnx_tab_script:not(.vnx_not_loading_btn) .el-custom-btn-register,
+.vnx_tab_script:not(.vnx_not_loading_btn) .el-custom-btn-register-mobile {
+  border: none;
+  background: linear-gradient(97deg, #ffbd2a 5%, #fd7659 170.21%);
+  color: white;
+  min-width: 120px;
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.brxe-vnx-table.domain_price_warp {
+  background-color: #eff4f8;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.vnx_tab_script:not(.vnx_not_loading_btn) .el-custom-btn-register-mobile {
+  display: flex;
+}
+
+.vnx_tab_script:not(.vnx_not_loading_btn) .el-custom-btn-register:hover,
+.vnx_tab_script:not(.vnx_not_loading_btn) .el-custom-btn-register-mobile:hover {
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+.vnx_tab_script .el-custom-btn-register.loading,
+.vnx_tab_script .el-custom-btn-register-mobile.loading {
+  background: linear-gradient(88deg, #ff8a00 4.36%, #cb3d00 100.54%);
+}
+
+.vnx_tab_script .el-custom-btn-register .loading_icon,
+.vnx_tab_script .el-custom-btn-register-mobile .loading_icon {
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+  animation: loading_spin 2s infinite linear;
+  -webkit-animation: loading_spin 2s infinite linear;
+}
+
+.brxe-vnx-table.compare_wp_hosting .hide_scroll::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.brxe-vnx-table.compare_wp_hosting .wph-label {
+  top: -22px;
+  background-image: url("https://vietnix.vn/wp-content/uploads/2023/08/Vector-1.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: contain;
+}
+
+.brxe-vnx-table.compare_wp_hosting .vnx-wph-height {
+  height: 724px;
+}
+
+.brxe-vnx-table.compare_wp_hosting .vnx-fixed-height {
+  height: 212px;
+}
+
+.brxe-vnx-table.compare_wp_hosting .vnx-wph-compare {
+  box-shadow: 0px 0px 20px 0px rgba(16, 69, 131, 0.15);
+}
+
+.brxe-vnx-table.compare_wp_hosting
+  .vnx-custom-btn-expand:not(.expanding)
+  .collapse_text,
+.brxe-vnx-table.compare_wp_hosting
+  .vnx-custom-btn-expand.expanding
+  .expand_text {
+  display: none;
+}
+.brxe-vnx-table.domain_price_name_table {
+  color: #164366;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.domain_price_v2 th div {
+  background-color: #38a7ff;
+}
+
+.brxe-vnx-table.domain_price_v2 .tooltiptext {
+  display: none !important;
+  min-width: 322px;
+  left: -148px;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s;
+  z-index: 3;
+}
+
+.brxe-vnx-table.domain_price_v2 .tooltiptext_top {
+  bottom: 20px !important;
+}
+
+.brxe-vnx-table.domain_price_v2 .tooltip_tb2:hover .tooltiptext {
+  display: block !important;
+  z-index: 1;
+}
+.brxe-vnx-table.domain_price_v2 .tooltiptext_price_table2 {
+  background-color: #38a7ff !important;
+  min-width: 162px !important;
+  left: 0 !important;
+}
+
+.brxe-vnx-table.domain_price_v2 .vnx-custom-over-scroll {
+  /* overflow-x: scroll; */
+  height: fit-content;
+}
+
+.brxe-vnx-table.domain_price_v2 .tooltiptext::after {
+  display: none !important;
+}
+
+.brxe-vnx-table.domain_price_v2 .vn-bg-button-subscribe {
+  padding: 8px 10px 8px 10px;
+  background-color: #38a7ff;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  display: block;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+}
+.brxe-vnx-table.domain_price_v2 .free_tooltip_hover:hover ~ .free_tooltip_data {
+  display: block;
+}
+.brxe-vnx-table.domain_price_v2 .free_tooltip_data {
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.12);
+  top: calc(100% + 18px);
+  right: 0;
+  z-index: 1;
+  display: none;
+}
+
+.brxe-vnx-table.domain_price_v2 .free_tooltip_data:before {
+  position: absolute;
+  content: "";
+  top: -18px;
+  right: 35px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 18px solid #fff;
+  z-index: 2;
+}
+.brxe-vnx-table.domain_price_v2 .vnx_cs_text_total_2 {
+  border-radius: 6px;
+  background: rgba(56, 167, 255, 0.1);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+@media (min-width: 1024px) {
+  .vnx_tab_script.group_1 .tab-active {
+    background: linear-gradient(90deg, #66bcff 0%, #0075ff 100%);
+    color: white;
+  }
+}
+@media (max-width: 1024px) {
+  .vnx_tab_script:not(.vnx_not_loading_btn) .el-custom-btn-register
+  {
+    background: #e8f0fa;
+  }
+  .vnx_tab_script.group_1 .tab-active {
+    border-color: #38a7ff;
+  }
+  .brxe-vnx-table.domain_price .vnx-custom-over-scroll {
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .brxe-vnx-table.domain_price
+    .vnx-custom-over-scroll
+    .vnx-custom-w-full-mobile {
+    width: 1024px !important;
+  }
+
+  .brxe-vnx-table.domain_price
+    .tooltip
+    .tooltiptext.custom-width-mobile-tooltiptext {
+    min-width: 229px;
+    left: -67px;
+  }
+
+  .brxe-vnx-table.domain_price
+    .tooltip
+    .tooltiptext.custom-width-mobile-tooltiptext::after {
+    left: 32%;
+  }
+  .brxe-vnx-table.domain_price .tooltip .tooltiptext::after {
+    left: 52%;
+  }
+
+  .brxe-vnx-table.domain_price .tooltip .tooltiptext.custom-width-mobile {
+    min-width: 290px;
+    left: -142px;
+  }
+}
+@media only screen and (max-width: 319px) {
+  .brxe-vnx-table.compare_wp_hosting .vnx-fixed-height {
+    height: 240px;
+  }
+}
+@keyframes loading_spin {
+  0% {
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+    -webkit-transform: rotateZ(-360deg);
+    -moz-transform: rotateZ(-360deg);
+    -ms-transform: rotateZ(-360deg);
+    -o-transform: rotateZ(-360deg);
+  }
+}

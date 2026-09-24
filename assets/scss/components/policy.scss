@@ -1,0 +1,66 @@
+.page-policy {
+  .header-banner {
+    background-image: url("https://vietnix.vn/wp-content/uploads/2021/06/policy-banner.png");
+    background-size: cover;
+    .vnx-spacer-inner-15 {
+      height: 15px;
+    }
+    .vnx-page-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 38px;
+      line-height: 52px;
+      color: #013a52;
+    }
+  }
+  .vnx-spacer-inner-50 {
+    height: 50px;
+  }
+
+  .container {
+    .vnx-nav-left {
+      width: 300px;
+      .nav-link {
+        li {
+          padding: 5px;
+          border-left: 5px solid #e2e2e2;
+          color: #828282;
+          font-style: normal;
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 10px;
+          &:hover {
+            color: #5b86e5;
+            border-left: 5px solid #5b86e5;
+          }
+
+          &.active {
+            color: #5b86e5;
+            border-left: 5px solid #5b86e5;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 1024px) {
+  .page-policy {
+    .header-banner {
+      .vnx-page-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 15px;
+      }
+    }
+    .vnx-spacer-inner-50 {
+      height: 10px !important;
+    }
+
+    .container {
+      .vnx-nav-left {
+        display: none;
+      }
+    }
+  }
+}

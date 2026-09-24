@@ -1,0 +1,16 @@
+// Tool "Media Tool". Diện mạo nút/thẻ lấy từ _tools.scss (.vnx-btn, .vnx-card...),
+// file này chỉ giữ những trạng thái do tools/inc/js/media_tool.js bật/tắt bằng class
+// - Tailwind JIT không quét thư mục đó nên không thể viết bằng utility.
+.vnx-media-tool-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+// JS thêm .disable trong lúc đang chạy để chặn bấm lại.
+.tool_media_btn.disable {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}

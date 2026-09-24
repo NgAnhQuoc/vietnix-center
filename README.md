@@ -69,7 +69,7 @@ Plugin **không dùng Composer** — không cần `composer install`, không có
 
 | Tool | Cần chuẩn bị |
 |---|---|
-| Import Docs | File service account Google tại `app/credentials.json` (có `client_email`, `private_key`), share Docs/folder Drive cho email service account. File này không commit, chép tay lên server. |
+| Import Docs | File service account Google tại `secrets/credentials.json` (có `client_email`, `private_key`), share Docs/folder Drive cho email service account. File này không commit, chép tay lên server. |
 | AI Search | API key OpenAI, nhập trong trang tool. |
 | Portal API / Landing Page API / Price Sources | API key + danh sách IP được phép (Allow IP), nhập trong trang tool. |
 | Report Posts, Cache Scheduler | Webhook URL Discord (nếu muốn nhận thông báo). |
@@ -183,7 +183,7 @@ Tool hẹn giờ tự động xoá cache **LiteSpeed Cache** theo URL cụ thể
 
 ## Security
 
-- Không commit `.env`, `app/credentials.json` hay bất kỳ token/API key thật nào.
+- Không commit `.env`, `secrets/credentials.json` hay bất kỳ token/API key thật nào.
 - Các form xử lý dữ liệu nhạy cảm (API key, IP whitelist) dùng nonce (`wp_verify_nonce`) và kiểm tra quyền (`current_user_can('manage_options')`).
 
 ## Changelog

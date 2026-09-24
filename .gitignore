@@ -19,7 +19,7 @@ tools/inc/vietnix-import-docs/vendor74/vendor/composer.lock
 tools/inc/vietnix-search-ai/storage/post_embeddings_ai.json
 tools/inc/vietnix-search-ai/storage/huongdan_embeddings_ai.json
 
-# Google service account keys
-app/credentials.json
-app/gbot-credentials.json
-app/secrets.php
+# Secret (service account Google, token...): chi commit file chan truy cap
+secrets/*
+!secrets/.htaccess
+!secrets/index.php

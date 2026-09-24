@@ -3,7 +3,7 @@ namespace HelperCenter;
 
 
 /**
- * Gọi Google Docs/Drive API bằng service account (app/credentials.json).
+ * Gọi Google Docs/Drive API bằng service account (secrets/credentials.json).
  *
  * Tự ký JWT bằng openssl và gọi API qua WordPress HTTP API, không dùng Guzzle/google-auth:
  * plugin vietnix-plugin cũng nạp Guzzle/psr7 (khác phiên bản) vào cùng namespace, bản nào nạp
@@ -127,7 +127,7 @@ class GoogleAuth
 
     private function getCredentials()
     {
-        $path = plugin_dir_path(__FILE__) . 'credentials.json';
+        $path = VNX_PLUGIN_PATH_CENTER . 'secrets/credentials.json';
         $credentials = is_readable($path) ? json_decode(file_get_contents($path), true) : null;
 
         if (empty($credentials['client_email']) || empty($credentials['private_key'])) {

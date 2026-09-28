@@ -327,7 +327,7 @@ class VNX_Table_Center extends \Bricks\Element
     ];
 
     $this->controls['tab_active'] = [
-      'label' => __('Tab active', 'elementor'),
+      'label' => __('Tab active', 'vietnix'),
       'group' => 'carousel_style_section',
       'inline' => false,
       'type' => 'number',

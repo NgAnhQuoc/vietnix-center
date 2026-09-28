@@ -309,7 +309,7 @@ class RegisterVariables_Center
       'vietnix-cache-scheduler' => [
         'label' => 'Cache Scheduler',
         'icon' => 'fa-clock',
-        'desc' => 'Hẹn giờ tự động xoá cache LiteSpeed theo URL cụ thể hoặc toàn bộ site',
+        'desc' => 'Hẹn giờ tự động xoá cache LiteSpeed theo URL cụ thể',
         'group' => 'system',
       ],
       'media_tool' => [

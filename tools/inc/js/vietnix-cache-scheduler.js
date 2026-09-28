@@ -12,13 +12,12 @@ jQuery(function ($) {
   const defaultForm = () => ({
     id: "",
     label: "",
-    purge_type: "all",
+    purge_type: "urls",
     urls: "",
     schedule_type: "once",
     run_at: "",
     time_of_day: "00:00",
     weekdays: [],
-    interval_minutes: 60,
     enabled: false,
   });
 
@@ -121,13 +120,12 @@ jQuery(function ($) {
         this.form = {
           id: job.id,
           label: job.label,
-          purge_type: job.purge_type,
-          urls: (job.urls || []).join("\n"),
+          purge_type: "urls",
+          urls: job.purge_type === "urls" ? (job.urls || []).join("\n") : "",
           schedule_type: job.schedule_type,
           run_at: job.run_at ? job.run_at.replace(" ", "T") : "",
           time_of_day: job.time_of_day,
           weekdays: (job.weekdays || []).slice(),
-          interval_minutes: job.interval_minutes,
           enabled: job.enabled,
         };
         this.formError = "";

@@ -166,6 +166,7 @@ document
                 dataType: 'json',
                 data: {
                   action: 'validate_single_domain_center',
+                  nonce: window.vnxDomainNonce.nonce,
                   domain: domainInput
                 }
               });
@@ -303,6 +304,7 @@ document
               dataType: 'json',
               data: {
                 action: 'validate_single_domain_center',
+                nonce: window.vnxDomainNonce.nonce,
                 domain: sld
               }
             });
@@ -537,6 +539,7 @@ document
                 dataType: 'json',
                 data: {
                   action: 'validate_single_domain_center',
+                  nonce: window.vnxDomainNonce.nonce,
                   domain: domain
                 }
               });
@@ -787,6 +790,7 @@ document
               dataType: 'json',
               data: {
                 action: 'validate_single_domain_center',
+                nonce: window.vnxDomainNonce.nonce,
                 domain: sld
               }
             });
@@ -1795,6 +1799,7 @@ document
                 dataType: 'json',
                 data: {
                   action: 'validate_single_domain_center',
+                  nonce: window.vnxDomainNonce.nonce,
                   domain: checkDomain
                 }
               });
@@ -2179,6 +2184,7 @@ document.querySelectorAll(".brxe-vnx-search-domain-form-v2.form-search-muti-doma
               dataType: 'json',
               data: {
                 action: 'validate_single_domain_center',
+                nonce: window.vnxDomainNonce.nonce,
                 domain: checkDomain
               }
             });

@@ -270,6 +270,10 @@ if (!function_exists('get_listDomian_Tab_Center')) {
 if (!function_exists('get_listDomian_whois_Center')) {
   function get_listDomian_whois_Center()
   {
+    if (!check_ajax_referer('vnx_domain_nonce', 'nonce', false)) {
+      wp_send_json_error(array('message' => 'Yêu cầu không hợp lệ.'));
+      exit;
+    }
     try {
       $domain_dispatch = new Domain_dispatch_Center();
       $sld = $_POST['domain'];
@@ -309,6 +313,10 @@ if (!function_exists('get_whois_domain_Center')) {
 if (!function_exists('validate_single_domain_Center')) {
   function validate_single_domain_Center()
   {
+    if (!check_ajax_referer('vnx_domain_nonce', 'nonce', false)) {
+      wp_send_json_error(array('message' => 'Yêu cầu không hợp lệ.'));
+      exit;
+    }
     try {
       $domain = isset($_POST['domain']) ? $_POST['domain'] : '';
 

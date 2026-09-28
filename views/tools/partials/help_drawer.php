@@ -71,14 +71,14 @@ $sections_by_context = array(
         'blocks' => array(
           array(
             'type' => 'lead',
-            'content' => 'Hẹn giờ tự động xoá cache <strong>LiteSpeed Cache</strong> theo URL cụ thể hoặc toàn bộ site. Cần plugin <strong>LiteSpeed Cache</strong> đã cài và đang bật thì các lịch hẹn mới chạy được.',
+            'content' => 'Hẹn giờ tự động xoá cache <strong>LiteSpeed Cache</strong> theo URL cụ thể. Cần plugin <strong>LiteSpeed Cache</strong> đã cài và đang bật thì các lịch hẹn mới chạy được.',
           ),
           array(
             'type' => 'steps',
             'items' => array(
               'Bấm <strong>Thêm lịch mới</strong>.',
-              'Chọn phạm vi xoá: <strong>Toàn bộ site</strong> hoặc <strong>URL cụ thể</strong> (nhập mỗi dòng 1 link, có thể dùng đường dẫn tương đối như <code>/blog/bai-viet</code>).',
-              'Chọn loại lịch: <strong>Chạy 1 lần</strong> (chọn ngày giờ, tự tắt sau khi chạy), <strong>Hằng ngày</strong>, <strong>Hằng tuần</strong> (chọn thêm các ngày trong tuần) hoặc <strong>Theo chu kỳ (phút)</strong>.',
+              'Nhập danh sách URL cần xoá cache, mỗi dòng 1 link; có thể dùng đường dẫn tương đối như <code>/blog/bai-viet</code>.',
+              'Chọn loại lịch: <strong>Chạy 1 lần</strong> (chọn ngày giờ, tự tắt sau khi chạy), <strong>Hằng ngày</strong> hoặc <strong>Hằng tuần</strong> (chọn thêm các ngày trong tuần).',
               'Tick <strong>Bật lịch này ngay sau khi lưu</strong> rồi bấm <strong>Lưu lịch</strong>.',
             ),
           ),

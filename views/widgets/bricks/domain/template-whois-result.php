@@ -1,5 +1,4 @@
 <?php
-// This code getted from Elementor Full Width template
 if ( !defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }

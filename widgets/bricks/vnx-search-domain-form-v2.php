@@ -26,6 +26,7 @@ class VNX_Search_Domain_Form_V2_Center extends \Bricks\Element
     wp_enqueue_script('vuejs-library-center');
     wp_register_script('vnx-domain-center', VNX_PLUGIN_URL_CENTER . 'widgets/inc/bricks/js/domain_handle/vnx_domain.js', ['jquery'], '1.1', true);
     wp_enqueue_script('vnx-domain-center');
+    wp_localize_script('vnx-domain-center', 'vnxDomainNonce', array('nonce' => wp_create_nonce('vnx_domain_nonce')));
     wp_register_script('vnx-domain-handle-center', VNX_PLUGIN_URL_CENTER . 'widgets/inc/bricks/js/domain_handle/vnx_box_search.js', ['jquery'], filemtime(VNX_PLUGIN_PATH_CENTER . 'widgets/inc/bricks/js/domain_handle/vnx_box_search.js'), true);
     wp_enqueue_script('vnx-domain-handle-center');
     wp_register_script('xlsx-center', VNX_PLUGIN_URL_CENTER . 'widgets/inc/bricks/js/xlsx.min.js');

@@ -183,15 +183,6 @@ if (!defined('ABSPATH')) {
             </div>
 
             <div class="vnx-field vnx-field--full">
-              <label class="vnx-label">Phạm vi xoá</label>
-              <div class="flex flex-wrap gap-4">
-                <label class="vnx-check"><input type="radio" value="all" v-model="form.purge_type"> Toàn bộ site</label>
-                <label class="vnx-check"><input type="radio" value="urls" v-model="form.purge_type"> URL cụ thể</label>
-              </div>
-              <p class="vnx-help" v-if="form.purge_type === 'all'">Chỉ chọn "Toàn bộ site" khi thật sự cần thiết: lịch này xoá và crawl lại cache các trang đã public, tốn nhiều thời gian và tài nguyên server hơn hẳn so với xoá theo URL cụ thể.</p>
-            </div>
-
-            <div class="vnx-field vnx-field--full" v-if="form.purge_type === 'urls'">
               <label class="vnx-label" for="cs-urls">Danh sách URL <span class="vnx-label__req">*</span></label>
               <textarea id="cs-urls" rows="4" v-model="form.urls"
                 placeholder="https://vietnix.vn/a&#10;https://vietnix.vn/b"></textarea>
@@ -204,7 +195,6 @@ if (!defined('ABSPATH')) {
                 <option value="once">Chạy 1 lần</option>
                 <option value="daily">Hằng ngày</option>
                 <option value="weekly">Hằng tuần</option>
-                <option value="interval">Theo chu kỳ (phút)</option>
               </select>
             </div>
 
@@ -216,11 +206,6 @@ if (!defined('ABSPATH')) {
             <div class="vnx-field vnx-field--md" v-if="form.schedule_type === 'daily' || form.schedule_type === 'weekly'">
               <label class="vnx-label" for="cs-time">Giờ chạy</label>
               <input type="time" id="cs-time" v-model="form.time_of_day">
-            </div>
-
-            <div class="vnx-field vnx-field--md" v-if="form.schedule_type === 'interval'">
-              <label class="vnx-label" for="cs-interval">Chạy lại mỗi (phút)</label>
-              <input type="number" id="cs-interval" min="1" v-model.number="form.interval_minutes">
             </div>
 
             <div class="vnx-field vnx-field--full" v-if="form.schedule_type === 'weekly'">

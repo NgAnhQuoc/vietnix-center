@@ -17,3 +17,4 @@ tools/inc/vietnix-search-ai/storage/huongdan_embeddings_ai.json
 secrets/*
 !secrets/.htaccess
 !secrets/index.php
+.cursor/*

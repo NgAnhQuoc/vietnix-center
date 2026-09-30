@@ -9,10 +9,6 @@ function sendDiscordCallmeMessage_Center($request)
     return false;
   }
 
-  if (!wp_verify_nonce($data['nonce_data'] ?? '', 'form-call-me-now')) {
-    return wp_send_json(false, 400);
-  }
-
   $msg = !empty($data['message']) ? $data['message'] : '';
 
   // Route van giu ten /vietnix/telegram vi frontend dang goi, nhung tin gui ve Discord.

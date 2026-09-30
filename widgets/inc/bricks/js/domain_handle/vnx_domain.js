@@ -519,6 +519,7 @@ function vnx_post_ajax_Data(type, action, data) {
     data: {
       action: action,
       data: data,
+      nonce: window.vnxDomainNonce.nonce,
     },
   });
 }
@@ -533,6 +534,7 @@ function vnx_post_ajax_DataSugguest(type, action, domain, data) {
       action: action,
       domain: domain,
       data: data,
+      nonce: window.vnxDomainNonce.nonce,
     },
   });
 }

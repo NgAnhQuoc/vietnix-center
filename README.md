@@ -30,7 +30,7 @@ Mỗi tool/extension bật/tắt độc lập ở trang **Settings**; tool nào 
 | Integrations | UTM Tracker | Ghi nhận và lưu tham số UTM vào cookie |
 | Integrations | Discord & Sheets | Đồng bộ dữ liệu form sang Discord và Google Sheet |
 | Integrations | Logger Search | Ghi log từ khoá người dùng tìm kiếm trên site, đọc lại qua API `/vnx_api/v1/search-keywords` (không có trang cấu hình riêng) |
-| System | Cache Scheduler | Hẹn giờ tự động xoá cache LiteSpeed theo URL cụ thể hoặc toàn bộ site |
+| System | Cache Scheduler | Hẹn giờ tự động xoá cache LiteSpeed theo URL cụ thể |
 | System | Media Tool | Đổi slug file upload thành chuỗi ngẫu nhiên 32 ký tự |
 | System | Banner | Quản lý banner bằng custom post type, không có trang cấu hình riêng |
 
@@ -69,7 +69,7 @@ Plugin **không dùng Composer** — không cần `composer install`, không có
 
 | Tool | Cần chuẩn bị |
 |---|---|
-| Import Docs | File service account Google tại `app/credentials.json` (có `client_email`, `private_key`), share Docs/folder Drive cho email service account. File này không commit, chép tay lên server. |
+| Import Docs | File service account Google tại `secrets/credentials.json` (có `client_email`, `private_key`), share Docs/folder Drive cho email service account. File này không commit, chép tay lên server. |
 | AI Search | API key OpenAI, nhập trong trang tool. |
 | Portal API / Landing Page API / Price Sources | API key + danh sách IP được phép (Allow IP), nhập trong trang tool. |
 | Report Posts, Cache Scheduler | Webhook URL Discord (nếu muốn nhận thông báo). |
@@ -150,18 +150,17 @@ Cần đặt cron nào, tần suất bao nhiêu: xem [Installation → 4. Cronta
 
 ## Cache Scheduler — hướng dẫn dùng
 
-Tool hẹn giờ tự động xoá cache **LiteSpeed Cache** theo URL cụ thể hoặc toàn bộ site. Yêu cầu plugin **LiteSpeed Cache** đã cài và đang bật — nếu không, trang tool hiện banner cảnh báo và mọi lịch hẹn tạm dừng chạy (dữ liệu đã lưu không mất, tự chạy lại khi bật LiteSpeed lên).
+Tool hẹn giờ tự động xoá cache **LiteSpeed Cache** theo URL cụ thể. Yêu cầu plugin **LiteSpeed Cache** đã cài và đang bật — nếu không, trang tool hiện banner cảnh báo và mọi lịch hẹn tạm dừng chạy (dữ liệu đã lưu không mất, tự chạy lại khi bật LiteSpeed lên).
 
 **Bật tool:** Vietnix Center → Settings → bật **Cache Scheduler** trong nhóm System, rồi vào Vietnix Center → Tools → tab **Cache Scheduler**.
 
 **Thêm lịch hẹn:**
 1. Bấm **Thêm lịch mới**.
-2. Chọn phạm vi xoá: **Toàn bộ site** hoặc **URL cụ thể** (nhập mỗi dòng 1 link, chấp nhận cả đường dẫn tương đối như `/blog/bai-viet`).
+2. Nhập danh sách URL cần xoá cache, mỗi dòng 1 link; chấp nhận đường dẫn tương đối như `/blog/bai-viet`.
 3. Chọn loại lịch:
    - **Chạy 1 lần** — chọn ngày giờ cụ thể, sau khi chạy lịch tự tắt.
    - **Hằng ngày** — chọn giờ chạy mỗi ngày.
    - **Hằng tuần** — chọn giờ + các ngày trong tuần.
-   - **Theo chu kỳ (phút)** — lặp lại sau mỗi N phút kể từ lần chạy gần nhất.
 4. Tick **Bật lịch này ngay sau khi lưu** (chỉ chọn được khi LiteSpeed đang active), bấm **Lưu lịch**.
 
 **Quản lý:** bảng danh sách cho phép bật/tắt từng lịch bằng toggle, sửa, xoá, hoặc **Chạy ngay** để test purge thủ công không cần đợi tới giờ. Công tắc **Tự động chạy** ở đầu trang là "cầu dao tổng" - tắt sẽ tạm dừng toàn bộ cron mà không đổi trạng thái bật/tắt riêng của từng lịch, bật lại là chạy tiếp bình thường (mặc định tắt, phải chủ động bật).
@@ -183,7 +182,7 @@ Tool hẹn giờ tự động xoá cache **LiteSpeed Cache** theo URL cụ thể
 
 ## Security
 
-- Không commit `.env`, `app/credentials.json` hay bất kỳ token/API key thật nào.
+- Không commit `.env`, `secrets/credentials.json` hay bất kỳ token/API key thật nào.
 - Các form xử lý dữ liệu nhạy cảm (API key, IP whitelist) dùng nonce (`wp_verify_nonce`) và kiểm tra quyền (`current_user_can('manage_options')`).
 
 ## Changelog
@@ -194,7 +193,7 @@ Tool hẹn giờ tự động xoá cache **LiteSpeed Cache** theo URL cụ thể
 - **Thông báo sau khi lưu form theo từng tool** — mỗi tool (Portal API, UTM, Discord & Sheets) dùng transient riêng, không còn bị tool khác "lấy mất" thông báo (`functions/requires/vnx_tool_notice.php`).
 - **Ẩn admin notice của plugin khác** trên trang Tools/Settings.
 - **Tài liệu API log từ khoá tìm kiếm** (`docs/search-keywords-api.md`).
-- **Thêm tool Cache Scheduler** — hẹn giờ tự động xoá cache LiteSpeed (1 lần / hằng ngày / hằng tuần / theo chu kỳ phút), theo URL cụ thể hoặc toàn site, bật/tắt từng lịch độc lập, cộng công tắc "Tự động chạy" tổng (mặc định tắt). Tự phát hiện LiteSpeed Cache chưa cài/đang tắt và dừng chạy lịch trong lúc đó. Có thể bật thông báo qua Discord webhook mỗi khi 1 lịch chạy xong (`tools/vietnix-cache-scheduler.php`, `crontab/cacheScheduler.php`).
+- **Thêm tool Cache Scheduler** — hẹn giờ tự động xoá cache LiteSpeed (1 lần / hằng ngày / hằng tuần) theo URL cụ thể, bật/tắt từng lịch độc lập, cộng công tắc "Tự động chạy" tổng (mặc định tắt). Tự phát hiện LiteSpeed Cache chưa cài/đang tắt và dừng chạy lịch trong lúc đó. Có thể bật thông báo qua Discord webhook mỗi khi 1 lịch chạy xong (`tools/vietnix-cache-scheduler.php`, `crontab/cacheScheduler.php`).
 
 ### 0.1.0 (2026-08-27)
 Phiên bản đầu tiên.

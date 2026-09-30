@@ -26,7 +26,13 @@ class VNX_Service_Price_V2_Center extends \Bricks\Element
     $this->control_groups['popular'] = [
       'title' => esc_html__('Popular', 'bricks'),
       'tab' => 'content',
-      'required' => ['version', '=', ['vnx-price_hosting_v2', 'vnx-price-have-compare', 'vnx-price_ssl', 'vnx-price-email']],
+      'required' => ['version', '=', ['vnx-price_hosting_v2', 'vnx-price-have-compare', 'vnx-price_ssl', 'vnx-price-email', 'vnx-price-server']],
+    ];
+
+    $this->control_groups['price_server'] = [
+      'title' => esc_html__('Price Server', 'vietnix'),
+      'tab' => 'content',
+      'required' => ['version', '=', ['vnx-price-server']],
     ];
 
     $this->control_groups['vnx-tooltip-icon-price'] = [
@@ -38,13 +44,13 @@ class VNX_Service_Price_V2_Center extends \Bricks\Element
     $this->control_groups['yes_icon'] = [
       'title' => esc_html__('Yes Icon', 'vietnix'),
       'tab' => 'content',
-      'required' => ['version', '=', ['vnx-price_hosting_v2', 'vnx-price-have-compare', 'vnx-price_scroll', 'vnx-price_ssl', 'vnx-price-email']],
+      'required' => ['version', '=', ['vnx-price_hosting_v2', 'vnx-price-have-compare', 'vnx-price_scroll', 'vnx-price_ssl', 'vnx-price-email', 'vnx-price-server']],
     ];
 
     $this->control_groups['no_icon'] = [
       'title' => esc_html__('No Icon', 'vietnix'),
       'tab' => 'content',
-      'required' => ['version', '=', ['vnx-price_hosting_v2', 'vnx-price-have-compare', 'vnx-price_scroll', 'vnx-price_ssl', 'vnx-price-email']],
+      'required' => ['version', '=', ['vnx-price_hosting_v2', 'vnx-price-have-compare', 'vnx-price_scroll', 'vnx-price_ssl', 'vnx-price-email', 'vnx-price-server']],
     ];
 
     $this->control_groups['custom_icon'] = [
@@ -85,6 +91,7 @@ class VNX_Service_Price_V2_Center extends \Bricks\Element
         'vnx-price-have-compare' => esc_html__('Price Have Compare', 'vietnix'),
         'vnx-price-have-range' => esc_html__('Price Have Range', 'vietnix'),
         'vnx-price-email' => esc_html__('Price Email', 'vietnix'),
+        'vnx-price-server' => esc_html__('Price Server', 'vietnix'),
       ],
     ];
 
@@ -391,6 +398,30 @@ class VNX_Service_Price_V2_Center extends \Bricks\Element
       'label' => esc_html__('Button Register Unit', 'vietnix'),
       'type' => 'text',
       'required' => ['version', '=', ['vnx-price-have-range']],
+    ];
+
+    $this->controls['banner_tabel'] = [
+      'tab' => 'content',
+      'group' => 'price_server',
+      'label' => esc_html__('Banner Table', 'vietnix'),
+      'type' => 'image',
+      'required' => ['version', '=', ['vnx-price-server']],
+    ];
+
+    $this->controls['banner_mobile'] = [
+      'tab' => 'content',
+      'group' => 'price_server',
+      'label' => esc_html__('Banner Mobile', 'vietnix'),
+      'type' => 'image',
+      'required' => ['version', '=', ['vnx-price-server']],
+    ];
+
+    $this->controls['price_unit'] = [
+      'tab' => 'content',
+      'group' => 'price_server',
+      'label' => esc_html__('Price Unit', 'vietnix'),
+      'type' => 'text',
+      'required' => ['version', '=', ['vnx-price-server']],
     ];
   }
 

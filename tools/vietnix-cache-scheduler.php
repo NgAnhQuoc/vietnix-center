@@ -1411,8 +1411,8 @@ class VietnixCacheScheduler_Center
     /** Kiểm tra và chuẩn hoá dữ liệu lịch hẹn gửi lên từ form. */
     private function sanitizeJobInput(array $raw)
     {
-        $purgeType = ($raw['purge_type'] ?? '') === 'all' ? 'all' : 'urls';
-        $scheduleType = in_array($raw['schedule_type'] ?? '', ['once', 'daily', 'weekly', 'interval'], true)
+        $purgeType = 'urls';
+        $scheduleType = in_array($raw['schedule_type'] ?? '', ['once', 'daily', 'weekly'], true)
             ? $raw['schedule_type']
             : '';
 
@@ -1421,26 +1421,24 @@ class VietnixCacheScheduler_Center
         }
 
         $urls = [];
-        if ($purgeType === 'urls') {
-            $lines = is_array($raw['urls'] ?? null) ? $raw['urls'] : explode("\n", $this->scalarString($raw['urls'] ?? ''));
-            foreach ($lines as $line) {
-                $line = trim($this->scalarString($line));
-                if ($line === '') {
-                    continue;
-                }
-                if (strpos($line, '//') === 0) {
-                    $line = (is_ssl() ? 'https:' : 'http:') . $line;
-                } elseif (strpos($line, '://') === false) {
-                    $line = home_url('/' . ltrim($line, '/'));
-                }
-                $line = esc_url_raw($line);
-                if ($line !== '' && !in_array($line, $urls, true)) {
-                    $urls[] = $line;
-                }
+        $lines = is_array($raw['urls'] ?? null) ? $raw['urls'] : explode("\n", $this->scalarString($raw['urls'] ?? ''));
+        foreach ($lines as $line) {
+            $line = trim($this->scalarString($line));
+            if ($line === '') {
+                continue;
             }
-            if (empty($urls)) {
-                return 'Cần ít nhất 1 URL hợp lệ.';
+            if (strpos($line, '//') === 0) {
+                $line = (is_ssl() ? 'https:' : 'http:') . $line;
+            } elseif (strpos($line, '://') === false) {
+                $line = home_url('/' . ltrim($line, '/'));
             }
+            $line = esc_url_raw($line);
+            if ($line !== '' && !in_array($line, $urls, true)) {
+                $urls[] = $line;
+            }
+        }
+        if (empty($urls)) {
+            return 'Cần ít nhất 1 URL hợp lệ.';
         }
 
         $runAt = '';
@@ -1460,7 +1458,6 @@ class VietnixCacheScheduler_Center
         }
 
         $timeOfDay = $this->scalarString($raw['time_of_day'] ?? '');
-        $intervalMinutes = $this->scalarString($raw['interval_minutes'] ?? '60');
 
         $job = [
             'label' => sanitize_text_field($raw['label'] ?? '') ?: 'Lịch xoá cache',
@@ -1470,7 +1467,6 @@ class VietnixCacheScheduler_Center
             'run_at' => $runAt,
             'time_of_day' => preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $timeOfDay) ? $timeOfDay : '00:00',
             'weekdays' => $weekdays,
-            'interval_minutes' => max(1, (int) $intervalMinutes),
             'enabled' => filter_var($raw['enabled'] ?? false, FILTER_VALIDATE_BOOLEAN) && $this->getLiteSpeedStatus() === 'active',
             'last_run_at' => null,
             'last_status' => null,

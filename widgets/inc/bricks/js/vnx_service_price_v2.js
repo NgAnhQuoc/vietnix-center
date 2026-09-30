@@ -421,7 +421,11 @@ function Vnx_wrapDivs_column($parent) {
   }
 }
 
-Vue.prototype.$eventBus = new Vue();
+// Guard: dòng này chạy ở top-level, nếu Vue chưa load sẽ ném ReferenceError
+// và chặn toàn bộ code phía sau (gồm cả block Price Server ở cuối file).
+if (typeof Vue !== "undefined") {
+  Vue.prototype.$eventBus = new Vue();
+}
 
 document.querySelectorAll('.vnx-price-have-range').forEach(function (element, index) {
   const containerId = element.id;
@@ -547,3 +551,60 @@ if ($(".vnx-price-email").length) {
       });
     });
   }
+
+
+  // Price Server: mount Vue lên markup có sẵn từ PHP, không dùng template.
+  // Layout này chỉ có 1 card nên không cần splide.
+  $(document).ready(function () {
+    if (typeof Vue === "undefined") {
+      return;
+    }
+
+    document.querySelectorAll(".vnx-price-server").forEach(function (element) {
+      new Vue({
+        el: element,
+        data: {
+          currentIndex: 0,
+        },
+        mounted() {
+          this.$tabs = this.$el.querySelectorAll(
+            ".vnx-cycle .vnx-container-item"
+          );
+          this.$items = this.$el.querySelectorAll(
+            ".vnx-container-price .vnx-item"
+          );
+
+          // Giữ chu kỳ PHP đã đánh dấu active làm điểm bắt đầu
+          this.$tabs.forEach((tab, i) => {
+            if (tab.classList.contains("vnx-active")) {
+              this.currentIndex = i;
+            }
+            tab.addEventListener("click", () => this.selectCycle(i));
+          });
+
+          this.selectCycle(this.currentIndex);
+        },
+        methods: {
+          selectCycle(index) {
+            this.currentIndex = index;
+
+            this.$tabs.forEach((tab, i) => {
+              tab.classList.toggle("vnx-active", i === index);
+            });
+
+            this.$items.forEach((item) => {
+              this.toggleByIndex(item, ".vnx-warp-discount-price", index);
+              this.toggleByIndex(item, ".vnx-price-col .vnx-button", index);
+            });
+          },
+
+          // Chỉ hiện phần tử thứ `index`, ẩn phần còn lại
+          toggleByIndex(item, selector, index) {
+            item.querySelectorAll(selector).forEach((el, i) => {
+              el.classList.toggle("hidden", i !== index);
+            });
+          },
+        },
+      });
+    });
+  });

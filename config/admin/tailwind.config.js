@@ -63,6 +63,5 @@ module.exports = {
     // **/*.php (khong phai **.php): fast-glob coi "**" trong cung mot segment nhu "*",
     // nen dang cu bo sot views/tools/partials/.
     "./views/**/*.php",
-    "!./tools/inc/vietnix-import-docs/**",
   ]),
 };

@@ -38,11 +38,11 @@ if (!function_exists('define_if_not_defined_Center')) {
   }
 }
 
-// Service account Google (gbot) cho Sheets: doc tu app/gbot-credentials.json (khong commit, xem .gitignore).
+// Service account Google (gbot) cho Sheets: doc tu secrets/gbot-credentials.json (khong commit, xem .gitignore).
 if (!function_exists('vnx_center_gbot_credentials')) {
   function vnx_center_gbot_credentials()
   {
-    $path = VNX_PLUGIN_PATH_CENTER . 'app/gbot-credentials.json';
+    $path = VNX_PLUGIN_PATH_CENTER . 'secrets/gbot-credentials.json';
     $credentials = is_readable($path) ? json_decode(file_get_contents($path), true) : null;
     return is_array($credentials) ? $credentials : array();
   }
@@ -237,9 +237,9 @@ define_if_not_defined_Center('VNX_WHOIS_LINK', 'https://guestapi.vietnix.vn/whoi
 define_if_not_defined_Center('VNX_Plugin_version_CENTER', '0.0.1');
 define_if_not_defined_Center('VNX_Api_Prefix_V1', 'vnx_api/v1');
 define_if_not_defined_Center('VNX_Api_Prefix_Mkt', 'vnx_api/mkt');
-// Secret (token...) nam o app/secrets.php, khong commit (xem .gitignore).
-if (is_readable(VNX_PLUGIN_PATH_CENTER . 'app/secrets.php')) {
-  require_once VNX_PLUGIN_PATH_CENTER . 'app/secrets.php';
+// Secret (token...) nam o secrets/Secrets.php, khong commit (xem .gitignore).
+if (is_readable(VNX_PLUGIN_PATH_CENTER . 'secrets/Secrets.php')) {
+  require_once VNX_PLUGIN_PATH_CENTER . 'secrets/Secrets.php';
 }
 define_if_not_defined_Center('VNX_Discord_Bot_Token', '');
 
